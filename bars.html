@@ -1,17 +1,11 @@
 ---
 layout: default
-morris_version: 0.5.1
+morris_version: 0.6
 ---
 <div class="row">
   <div class="span12">
-
-
     <h1>Bar Charts</h1>
-
-
     <hr>
-
-
     <h2 id="bars">Bar Charts</h2>
     <p>
       Create bar charts using <code>Morris.Bar(<em>options</em>)</code>,
@@ -157,6 +151,31 @@ morris_version: 0.5.1
             <br>
             This has a significant performance impact, so is disabled by
             default.
+          </td>
+        </tr>
+        <tr>
+          <td><code>horizontal</code></td>
+          <td>
+            Set to <code>true</code> to display the bar chart horizontally. (default: false).
+          </td>
+        </tr>
+        <tr>
+          <td><code>animate</code><br><span class='label label-info'>new v0.6</span></td>
+          <td>
+            Set to <code>false</code> to disable chart animation. (default: true).
+          </td>
+        </tr>
+        <tr>
+          <td><code>dataLabels</code><br><span class='label label-info'>new v0.6</span></td>
+          <td>
+            Set to <code>true</code> to display values of bar charts. (default: false).<br><br>
+            Appearance of label can be customized through properties <code>dataLabelsFamily</code>, <code>dataLabelsSize</code>, <code>dataLabelsWeight</code> and <code>dataLabelsColor</code>.
+          </td>
+        </tr>
+        <tr>
+          <td><code>dataLabelsPosition</code><br><span class='label label-info'>new v0.6</span></td>
+          <td>
+            Set to <code>inside</code> to display values inside donut/pie's segments. (default: outside).
           </td>
         </tr>
       </tbody>
