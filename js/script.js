@@ -5,9 +5,7 @@
 $(function () {
   // data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type
   var tax_data = [
-       {"period": "2011 Q3", "licensed": 3407, "sorned": 660},
-       {"period": "2011 Q2", "licensed": 3351, "sorned": 629},
-       {"period": "2011 Q1", "licensed": 3269, "sorned": 618},
+       {"period": "2011 Q4", "licensed": 3407, "sorned": 660},
        {"period": "2010 Q4", "licensed": 3246, "sorned": 661},
        {"period": "2009 Q4", "licensed": 3171, "sorned": 676},
        {"period": "2008 Q4", "licensed": 3155, "sorned": 681},
