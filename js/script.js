@@ -9,9 +9,9 @@ $(function () {
        {"period": "2010 Q4", "licensed": 3246, "sorned": 661},
        {"period": "2009 Q4", "licensed": 3171, "sorned": 676},
        {"period": "2008 Q4", "licensed": 3155, "sorned": 681},
-       {"period": "2007 Q4", "licensed": 3226, "sorned": 620},
-       {"period": "2006 Q4", "licensed": 3245, "sorned": null},
-       {"period": "2005 Q4", "licensed": 3289, "sorned": null}
+       {"period": "2007 Q4", "licensed": 2726, "sorned": 620},
+       {"period": "2006 Q4", "licensed": 2245, "sorned": null},
+       {"period": "2005 Q4", "licensed": 1289, "sorned": null}
   ];
   Morris.Line({
     element: 'hero-graph',
