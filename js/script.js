@@ -52,7 +52,8 @@
     ykeys: ['iphone', 'ipad', 'itouch'],
     labels: ['iPhone', 'iPad', 'iPod Touch'],
     pointSize: 2,
-    hideHover: 'auto'
+    hideHover: 'auto',
+    dataLabels: false
   });
 
   Morris.Bar({
