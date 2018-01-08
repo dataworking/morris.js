@@ -37,8 +37,13 @@
       {label: 'Sugar', value: 10 }
     ],
     formatter: function (y) { return y + "%" }
-  });
+  }).options.colors.forEach(function(color, a){ 
+      if (item.data[a] != undefined) {
+        $('#hero-donut').parent('div').find('div.legend').append($('<span></span>').html('<i class="fa fa-square"></i> '+item.data[a].label).css('color', color));
+      }
+    });
 
+  array_labels = ['iPhone', 'iPad', 'iPod Touch'];
   Morris.Area({
     element: 'hero-area',
     data: [
@@ -55,12 +60,17 @@
     ],
     xkey: 'period',
     ykeys: ['iphone', 'ipad', 'itouch'],
-    labels: ['iPhone', 'iPad', 'iPod Touch'],
+    labels: array_labels,
     pointSize: 2,
     hideHover: 'auto',
     dataLabels: false
+  }).options.lineColors.forEach(function(color, a){ 
+    if (array_labels[a] != undefined) {
+      $('#hero-area').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
+    }
   });
 
+  array_labels = ['Geekbench', 'Satisfaction'];
   Morris.Bar({
     element: 'hero-bar',
     data: [
@@ -73,12 +83,16 @@
     ],
     xkey: 'device',
     ykeys: ['geekbench', 'satisfaction'],
-    labels: ['Geekbench', 'Satisfaction'],
+    labels: array_labels,
     barRatio: 0.4,
     xLabelAngle: 35,
     nbYkeys2: 1,
     postUnits2: '%',
     hideHover: 'auto'
+  }).options.lineColors.forEach(function(color, a){ 
+    if (array_labels[a] != undefined) {
+      $('#hero-bar').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
+    }
   });
 
   new Morris.Line({
