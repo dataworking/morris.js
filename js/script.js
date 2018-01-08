@@ -24,7 +24,7 @@
     nbYkeys2: 0
   }).options.lineColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
-      $('#hero-graph').parent('div').find('div.legend').append($('<span></span>').html('&#x25BA; '+array_labels[a]).css('color', color));
+      $('#hero-graph').parent('div').find('div.legend').append($('<span></span>').html('&#25A0; '+array_labels[a]).css('color', color));
     }
   });
 
