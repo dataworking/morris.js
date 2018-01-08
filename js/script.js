@@ -19,7 +19,8 @@
     xkey: 'period',		
     ykeys: ['licensed', 'sorned'],		
     labels: ['Licensed', 'Off the road'],
-    postUnits: 'pcs'
+    postUnits: 'pcs',
+    nbYkeys2: 0
   });
 
   Morris.Donut({
