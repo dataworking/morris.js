@@ -18,7 +18,9 @@
     data: tax_data,		
     xkey: 'period',		
     ykeys: ['licensed', 'sorned'],		
-    labels: ['Licensed', 'Off the road']		
+    labels: ['Licensed', 'Off the road'],
+    postUnits: 'pcs',
+    postUnits2: '%'
   });
 
   Morris.Donut({
