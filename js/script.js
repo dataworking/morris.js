@@ -91,9 +91,8 @@
     nbYkeys2: 1,
     postUnits2: '%',
     hideHover: 'auto'
-  }).options.lineColors.forEach(function(color, a){ 
+  }).options.barColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
-      console.log('rrrr');
       $('#hero-bar').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
     }
   });
