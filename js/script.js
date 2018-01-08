@@ -13,7 +13,13 @@
        {"period": "2013 Q4", "licensed": 2245, "sorned": null},
        {"period": "2012 Q4", "licensed": 1289, "sorned": null}
   ];
-
+  Morris.Line({
+    element: 'hero-graph',		
+    data: tax_data,		
+    xkey: 'period',		
+    ykeys: ['licensed', 'sorned'],		
+    labels: ['Licensed', 'Off the road']		
+  });
 
   Morris.Donut({
     element: 'hero-donut',
