@@ -56,18 +56,20 @@ $(function () {
   Morris.Bar({
     element: 'hero-bar',
     data: [
-      {device: 'iPhone 6', geekbench: 136},
-      {device: 'iPhone 7', geekbench: 137},
-      {device: 'iPhone 7S', geekbench: 275},
-      {device: 'iPhone 8', geekbench: 380},
-      {device: 'iPhone 8 Plus', geekbench: 655},
-      {device: 'iPhone X', geekbench: 1571}
+      {device: 'iPhone 6', geekbench: 136, satisfaction: 86},
+      {device: 'iPhone 7', geekbench: 137, satisfaction: 88},
+      {device: 'iPhone 7S', geekbench: 275, satisfaction: 87},
+      {device: 'iPhone 8', geekbench: 380, satisfaction: 86},
+      {device: 'iPhone 8 Plus', geekbench: 655, satisfaction: 88},
+      {device: 'iPhone X', geekbench: 1571, satisfaction: 96}
     ],
     xkey: 'device',
-    ykeys: ['geekbench'],
-    labels: ['Geekbench'],
+    ykeys: ['geekbench', 'satisfaction'],
+    labels: ['Geekbench', 'satisfaction'],
     barRatio: 0.4,
     xLabelAngle: 35,
+    nbYkeys2: 1,
+    postUnits2: '%',
     hideHover: 'auto'
   });
 
