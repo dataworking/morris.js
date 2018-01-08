@@ -13,13 +13,19 @@
        {"period": "2013 Q4", "licensed": 2245, "sorned": null},
        {"period": "2012 Q4", "licensed": 1289, "sorned": null}
   ];
+
+  var array_labels = ['Licensed', 'Off the road'];
   Morris.Line({
     element: 'hero-graph',		
     data: tax_data,		
     xkey: 'period',		
     ykeys: ['licensed', 'sorned'],		
-    labels: ['Licensed', 'Off the road'],
+    labels: array_labels,
     nbYkeys2: 0
+  }).options.lineColors.forEach(function(color, a){ 
+    if (array_labels[a] != undefined) {
+      $('#hero-graph').parent('div').find('div.legend').append($('<span></span>').html('<i class="fa fa-square"></i> '+array_labels[a]).css('color', color));
+    }
   });
 
   Morris.Donut({
@@ -67,7 +73,7 @@
     ],
     xkey: 'device',
     ykeys: ['geekbench', 'satisfaction'],
-    labels: ['Geekbench', 'satisfaction'],
+    labels: ['Geekbench', 'Satisfaction'],
     barRatio: 0.4,
     xLabelAngle: 35,
     nbYkeys2: 1,
