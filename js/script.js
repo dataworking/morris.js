@@ -41,7 +41,7 @@
     formatter: function (y) { return y + "%" }
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
-        $('#hero-donut').parent('div').find('div.legend').append($('<span></span>').html('<i class="fa fa-square"></i> '+item.data[a].label).css('color', color));
+        $('#hero-donut').parent('div').find('div.legend').append($('<span></span>').html('<i class="fa fa-square"></i> '+pie_data[a].label).css('color', color));
       }
     });
 
