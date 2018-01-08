@@ -41,7 +41,7 @@
     formatter: function (y) { return y + "%" }
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
-        $('#hero-donut').parent('div').find('div.legend').append($('<span></span>').html('&#x25A0; '+pie_data[a].label).css('color', color));
+        $('#hero-donut').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+pie_data[a].label).css('color', color));
       }
     });
 
@@ -93,6 +93,7 @@
     hideHover: 'auto'
   }).options.lineColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
+      console.log('rrrr');
       $('#hero-bar').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
     }
   });
