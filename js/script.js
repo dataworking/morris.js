@@ -28,17 +28,19 @@
     }
   });
 
-  Morris.Donut({
-    element: 'hero-donut',
-    data: [
+  var pie_data = [
       {label: 'Jam', value: 25 },
       {label: 'Frosted', value: 40 },
       {label: 'Custard', value: 25 },
       {label: 'Sugar', value: 10 }
-    ],
+  ];
+
+  Morris.Donut({
+    element: 'hero-donut',
+    data: pie_data,
     formatter: function (y) { return y + "%" }
   }).options.colors.forEach(function(color, a){ 
-      if (item.data[a] != undefined) {
+      if (pie_data[a] != undefined) {
         $('#hero-donut').parent('div').find('div.legend').append($('<span></span>').html('<i class="fa fa-square"></i> '+item.data[a].label).css('color', color));
       }
     });
