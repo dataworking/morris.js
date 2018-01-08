@@ -19,7 +19,6 @@
     xkey: 'period',		
     ykeys: ['licensed', 'sorned'],		
     labels: ['Licensed', 'Off the road'],
-    postUnits: 'pcs',
     nbYkeys2: 0
   });
 
