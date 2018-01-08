@@ -21,7 +21,8 @@
     xkey: 'period',		
     ykeys: ['licensed', 'sorned'],		
     labels: array_labels,
-    nbYkeys2: 0
+    nbYkeys2: 0,
+    resize: true
   }).options.lineColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
       $('#hero-graph').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
@@ -38,7 +39,8 @@
   Morris.Donut({
     element: 'hero-donut',
     data: pie_data,
-    formatter: function (y) { return y + "%" }
+    formatter: function (y) { return y + "%" },
+    resize: true
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
         $('#hero-donut').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+pie_data[a].label).css('color', color));
@@ -65,7 +67,8 @@
     labels: array_labels,
     pointSize: 2,
     hideHover: 'auto',
-    dataLabels: false
+    dataLabels: false,
+    resize: true
   }).options.lineColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
       $('#hero-area').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
@@ -90,6 +93,7 @@
     xLabelAngle: 35,
     nbYkeys2: 1,
     postUnits2: '%',
+    resize: true,
     hideHover: 'auto'
   }).options.barColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
@@ -108,7 +112,8 @@
       {year: '2016', value: 5},
       {year: '2017', value: 5},
       {year: '2018', value: 20}
-    ]
+    ],
+    resize: true
   });
 
 
