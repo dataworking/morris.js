@@ -2,7 +2,7 @@
 
 */
 
-$(function () {
+
   // data stolen from http://howmanyleft.co.uk/vehicle/jaguar_'e'_type
   var tax_data = [
        {"period": "2018 Q4", "licensed": 3407, "sorned": 660},
@@ -87,9 +87,5 @@ $(function () {
     ]
   });
 
-  $('.code-example').each(function (index, el) {
-    eval($(el).text());
-  });
-});
 
 
