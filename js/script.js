@@ -37,9 +37,21 @@
   ];
 
   Morris.Donut({
+    element: 'hero-donut-pie',
+    data: pie_data,
+    formatter: function (y) { return y + "%" },
+    resize: true
+  }).options.colors.forEach(function(color, a){ 
+      if (pie_data[a] != undefined) {
+        $('#hero-donut').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+pie_data[a].label).css('color', color));
+      }
+    });
+
+  Morris.Donut({
     element: 'hero-donut',
     data: pie_data,
     formatter: function (y) { return y + "%" },
+    donutType: 'donut',
     resize: true
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
@@ -94,6 +106,33 @@
     nbYkeys2: 1,
     postUnits2: '%',
     resize: true,
+    hideHover: 'auto'
+  }).options.barColors.forEach(function(color, a){ 
+    if (array_labels[a] != undefined) {
+      $('#hero-bar').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
+    }
+  });
+
+  array_labels = ['Geekbench''];
+  Morris.Bar({
+    element: 'hero-bar-horizontal',
+    data: [
+      {device: 'iPhone 6', geekbench: 136, satisfaction: 86},
+      {device: 'iPhone 7', geekbench: 137, satisfaction: 88},
+      {device: 'iPhone 7S', geekbench: 275, satisfaction: 87},
+      {device: 'iPhone 8', geekbench: 380, satisfaction: 86},
+      {device: 'iPhone 8 Plus', geekbench: 655, satisfaction: 88},
+      {device: 'iPhone X', geekbench: 1571, satisfaction: 96}
+    ],
+    xkey: 'device',
+    ykeys: ['geekbench'],
+    labels: array_labels,
+    barRatio: 0.4,
+    xLabelAngle: 35,
+    nbYkeys2: 1,
+    postUnits2: '%',
+    resize: true,
+    horizontal: true,
     hideHover: 'auto'
   }).options.barColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
