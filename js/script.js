@@ -134,7 +134,7 @@
     postUnits2: '%',
     resize: true,
     horizontal: true,
-    hideHover: 'auto'
+    hideHover: 'always'
   }).options.barColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
       $('#hero-bar-horizontal').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
