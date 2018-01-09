@@ -113,7 +113,7 @@
     }
   });
 
-  array_labels = ['Geekbench''];
+  array_labels = ['Geekbench'];
   Morris.Bar({
     element: 'hero-bar-horizontal',
     data: [
