@@ -52,6 +52,7 @@
     data: pie_data,
     formatter: function (y) { return y + "%" },
     donutType: 'donut',
+    dataLabels: false,
     resize: true
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
