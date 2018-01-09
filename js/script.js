@@ -43,7 +43,7 @@
     resize: true
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
-        $('#hero-donut').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+pie_data[a].label).css('color', color));
+        $('#hero-donut-pie').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+pie_data[a].label).css('color', color));
       }
     });
 
@@ -129,14 +129,14 @@
     labels: array_labels,
     barRatio: 0.4,
     xLabelAngle: 35,
-    nbYkeys2: 1,
+    nbYkeys2: 0,
     postUnits2: '%',
     resize: true,
     horizontal: true,
     hideHover: 'auto'
   }).options.barColors.forEach(function(color, a){ 
     if (array_labels[a] != undefined) {
-      $('#hero-bar').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
+      $('#hero-bar-horizontal').parent('div').find('div.legend').append($('<span style="margin-left: 15px;"></span>').html('&#x25A0; '+array_labels[a]).css('color', color));
     }
   });
 
