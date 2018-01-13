@@ -39,7 +39,7 @@
   Morris.Donut({
     element: 'hero-donut-pie',
     data: pie_data,
-    formatter: function (y) { return y + "%" },
+    donutType: 'pie',
     resize: true
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
@@ -50,9 +50,9 @@
   Morris.Donut({
     element: 'hero-donut',
     data: pie_data,
-    formatter: function (y) { return y + "%" },
     donutType: 'donut',
-    dataLabels: false,
+    showPercentage: true,
+    dataLabels: true,
     resize: true
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
