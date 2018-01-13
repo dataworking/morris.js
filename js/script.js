@@ -54,6 +54,7 @@
     donutType: 'donut',
     showPercentage: true,
     dataLabels: true,
+    dataLabelsPosition: 'outside',
     resize: true
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
