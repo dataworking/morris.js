@@ -30,16 +30,17 @@
   });
 
   var pie_data = [
-      {label: 'Jam', value: 25 },
-      {label: 'Frosted', value: 40 },
+      {label: 'Jam', value: 35 },
+      {label: 'Frosted', value: 50 },
       {label: 'Custard', value: 25 },
-      {label: 'Sugar', value: 10 }
+      {label: 'Sugar', value: 20 }
   ];
 
   Morris.Donut({
     element: 'hero-donut-pie',
     data: pie_data,
     donutType: 'pie',
+    dataLabels: true,
     resize: true
   }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
