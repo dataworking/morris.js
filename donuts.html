@@ -12,8 +12,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js' crossorigin='anonymous'></script>
     <script src='https://pierresh.github.io/morris.js/js/morris.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css'>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'></script>
     <title>Morris.js 0.6</title>
     <style>
       h1, h2 {
@@ -71,102 +71,146 @@
             <code>Morris.Donut(<em>options</em>)</code>, with the following
             options.
           </p>
-          <table class="table table-striped table-bordered">
-            <tbody>
-              <tr>
-                <td><code>data</code><br><b>required</b></td>
-                <td>
-                  The data to plot.  This is an array of objects, containing
-                  <code>label</code> and <code>value</code> attributes
-                  corresponding to the labels and sizes of the segments of the
-                  donut chart.
-                  <br>
-                  <em>
-                    Note: by default, the segment with the greatest value will
-                    be initially selected.  You can change the selection using
-                    the </em><code>select(<em>index</em>)</code><em> method on
-                    the object returned by </em><code>Morris.Donut</code><em>.
-                  </em>
-                  <br>
-                  <em>
-                    Note 2: as for line charts, if you need to update the plot, use
-                    the <code>setData</code> method on the object that
-                    <code>Morris.Donut</code> returns.
-                  </em>
-                </td>
-              </tr>
-              <tr>
-                <td><code>element</code><br><b>required</b></td>
-                <td>
-                  The ID of (or a reference to) the element into which to insert the graph.
-                  <br>
-                  <em>Note: this element must have a width and height defined in its styling.</em>
-                </td>
-              </tr>
-              <tr>
-                <td><code>colors</code></td>
-                <td>
-                  An array of strings containing HTML-style hex colors for each
-                  of the donut segments.
-                  <em>
-                    Note: if there are fewer colors than segments, the colors
-                    will cycle back to the start of the array when exhausted.
-                  </em>
-                </td>
-              </tr>
-              <tr>
-                <td><code>formatter</code></td>
-                <td>
-                  A function that will translate a y-value into a label for
-                  the centre of the donut.
-                  <br>
-                  eg: currency <code>function (y, <em>data</em>) { return '$' + y }</code>
-                  <br>
-                  <em>
-                    Note: if required, the method is also passed an optional second
-                    argument, which is the complete data row for the given value.
-                  </em>
-                </td>
-              </tr>
-              <tr>
-                <td><code>resize</code></td>
-                <td>
-                  Set to <code>true</code> to enable automatic resizing when the
-                  containing element resizes. (default: false).
-                  <br>
-                  This has a significant performance impact, so is disabled by
-                  default.
-                </td>
-              </tr>
-              <tr>
-                <td><code>donutType</code><br><span class='badge badge-primary'>new v0.6</span></td>
-                <td>
-                  Set to <code>pie</code> to display the chart as a pie chart instead of donut. (default: donut).
-                </td>
-              </tr>
-              <tr>
-                <td><code>animate</code><br><span class='badge badge-primary'>new v0.6</span></td>
-                <td>
-                  Set to <code>false</code> to disable chart animation. (default: true).
-                </td>
-              </tr>
-              <tr>
-                <td><code>dataLabels</code><br><span class='badge badge-primary'>new v0.6</span></td>
-                <td>
-                  Set to <code>true</code> to display values close to donut/pie's segments. (default: false).<br><br>
-                  Appearance of label can be customized through properties <code>dataLabelsFamily</code>, <code>dataLabelsSize</code>, <code>dataLabelsWeight</code> and <code>dataLabelsColor</code>.
-                </td>
-              </tr>
-              <tr>
-                <td><code>dataLabelsPosition</code><br><span class='badge badge-primary'>new v0.6</span></td>
-                <td>
-                  Set to <code>inside</code> to display values inside donut/pie's segments. (default: outside).
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class='responsive'>
+            <table class="table table-striped table-bordered">
+              <tbody>
+                <tr>
+                  <td style='min-width: 200px;'><code>data</code><br><b>required</b></td>
+                  <td>
+                    The data to plot.  This is an array of objects, containing
+                    <code>label</code> and <code>value</code> attributes
+                    corresponding to the labels and sizes of the segments of the
+                    donut chart.
+                    <br>
+                    <em>
+                      Note: by default, the segment with the greatest value will
+                      be initially selected.  You can change the selection using
+                      the </em><code>select(<em>index</em>)</code><em> method on
+                      the object returned by </em><code>Morris.Donut</code><em>.
+                    </em>
+                    <br>
+                    <em>
+                      Note 2: as for line charts, if you need to update the plot, use
+                      the <code>setData</code> method on the object that
+                      <code>Morris.Donut</code> returns.
+                    </em>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>element</code><br><b>required</b></td>
+                  <td>
+                    The ID of (or a reference to) the element into which to insert the graph.
+                    <br>
+                    <em>Note: this element must have a width and height defined in its styling.</em>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>colors</code></td>
+                  <td>
+                    An array of strings containing HTML-style hex colors for each
+                    of the donut segments.
+                    <em>
+                      Note: if there are fewer colors than segments, the colors
+                      will cycle back to the start of the array when exhausted.
+                    </em>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>formatter</code></td>
+                  <td>
+                    A function that will translate a y-value into a label for
+                    the centre of the donut.
+                    <br>
+                    eg: currency <code>function (y, <em>data</em>) { return '$' + y }</code>
+                    <br>
+                    <em>
+                      Note: if required, the method is also passed an optional second
+                      argument, which is the complete data row for the given value.
+                    </em>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>resize</code></td>
+                  <td>
+                    Set to <code>true</code> to enable automatic resizing when the
+                    containing element resizes. (default: false).
+                    <br>
+                    This has a significant performance impact, so is disabled by
+                    default.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>donutType</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>pie</code> to display the chart as a pie chart instead of donut. (default: donut).
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>animate</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>false</code> to disable chart animation. (default: true).
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>dataLabels</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>true</code> to display values close to donut/pie's segments. (default: false).<br><br>
+                    Appearance of label can be customized through properties <code>dataLabelsFamily</code>, <code>dataLabelsSize</code>, <code>dataLabelsWeight</code> and <code>dataLabelsColor</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>dataLabelsPosition</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>inside</code> to display values inside donut/pie's segments. (default: outside).
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col'>
+          <h3>Example</h3>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-sm-6'>
+          <pre>
+            <code class='html'>
+  &lt;div id='chart_line'&gt;&lt;/div&gt;
+  &lt;script&gt;
+    Morris.Donut({
+      element: 'chart_donut',
+      data: [
+        {label: 'Africa', value: 5 },
+        {label: 'Asia', value: 5 },
+        {label: 'Europe', value: 14 },
+        {label: 'North America', value: 3 },
+        {label: 'South America', value: 5 }
+      ]
+    });
+  &lt;/script&gt;
+            </code>
+          </pre>
+        </div>
+        <div class='col-sm-6'>
+          <div id='chart_donut'></div>
         </div>
       </div>
     </div>
+    <script>
+      Morris.Donut({
+        element: 'chart_donut',
+        data: [
+          {label: 'Africa', value: 5 },
+          {label: 'Asia', value: 5 },
+          {label: 'Europe', value: 14 },
+          {label: 'North America', value: 3 },
+          {label: 'South America', value: 5 }
+        ]
+      });
+    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
