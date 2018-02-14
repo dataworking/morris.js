@@ -25,6 +25,7 @@
         background-color: #fff;
       }
       canvas { max-height: 250px; }
+      .popover { max-width: 300px; }
     </style>
   </head>
 <body>
@@ -237,11 +238,11 @@
     Morris.Line({
       element: 'chart_line_1',
       data: [
-        {year: '1958', nb: 1},
-        {year: '1962', nb: 2},
-        {year: '1970', nb: 3},
-        {year: '1994', nb: 4},
-        {year: '2002', nb: 5},
+        { year: '1958', nb: 1 },
+        { year: '1962', nb: 2 },
+        { year: '1970', nb: 3 },
+        { year: '1994', nb: 4 },
+        { year: '2002', nb: 5 }
       ],
       xkey: 'year',
       ykeys: ['nb'],
@@ -251,11 +252,11 @@
     Morris.Line({
       element: 'chart_line_2',
       data: [
-        {year: '1958', nb: 1},
-        {year: '1962', nb: 2},
-        {year: '1970', nb: 3},
-        {year: '1994', nb: 4},
-        {year: '2002', nb: 5},
+        { year: '1958', nb: 1 },
+        { year: '1962', nb: 2 },
+        { year: '1970', nb: 3 },
+        { year: '1994', nb: 4 },
+        { year: '2002', nb: 5 }
       ],
       lineWidth: 0,
       trendLine: true,
@@ -268,11 +269,11 @@
     Morris.Line({
       element: 'chart_line_3',
       data: [
-        {year: '1958', nb: 1},
-        {year: '1962', nb: 2},
-        {year: '1970', nb: 3},
-        {year: '1994', nb: 4},
-        {year: '2002', nb: 5},
+        { year: '1958', nb: 1 },
+        { year: '1962', nb: 2 },
+        { year: '1970', nb: 3 },
+        { year: '1994', nb: 4 },
+        { year: '2002', nb: 5 }
       ],
       xkey: 'year',
       ykeys: ['nb'],
@@ -283,11 +284,11 @@
     Morris.Bar({
       element: 'chart_hist_1',
       data: [
-        {team: 'Brazil', nb: 5},
-        {team: 'Italy', nb: 4},
-        {team: 'Germany', nb: 4},
-        {team: 'Uruguay', nb: 2},
-        {team: 'Argentina', nb: 2},
+        { team: 'Brazil', nb: 5 },
+        { team: 'Italy', nb: 4 },
+        { team: 'Germany', nb: 4 },
+        { team: 'Uruguay', nb: 2 },
+        { team: 'Argentina', nb: 2 }
       ],
       xkey: 'team',
       ykeys: ['nb'],
@@ -297,11 +298,11 @@
     Morris.Bar({
       element: 'chart_hist_2',
       data: [
-        {team: 'Brazil', nb: 5},
-        {team: 'Italy', nb: 4},
-        {team: 'Germany', nb: 4},
-        {team: 'Uruguay', nb: 2},
-        {team: 'Argentina', nb: 2},
+        { team: 'Brazil', nb: 5 },
+        { team: 'Italy', nb: 4 },
+        { team: 'Germany', nb: 4 },
+        { team: 'Uruguay', nb: 2 },
+        { team: 'Argentina', nb: 2 }
       ],
       horizontal: true,
       xkey: 'team',
@@ -312,11 +313,11 @@
     Morris.Bar({
       element: 'chart_hist_3',
       data: [
-        {team: 'Brazil', nb: 5, avg: 2.2},
-        {team: 'Italy', nb: 4, avg: 1.9},
-        {team: 'Germany', nb: 4, avg: 2.1},
-        {team: 'Uruguay', nb: 2, avg: 1.4},
-        {team: 'Argentina', nb: 2, avg: 1.8},
+        { team: 'Brazil', nb: 5, avg: 2.2 },
+        { team: 'Italy', nb: 4, avg: 1.9 },
+        { team: 'Germany', nb: 4, avg: 2.1 },
+        { team: 'Uruguay', nb: 2, avg: 1.4 },
+        { team: 'Argentina', nb: 2, avg: 1.8 }
       ],
       xkey: 'team',
       ykeys: ['nb', 'avg'],
@@ -325,11 +326,11 @@
     });
 
     pie_data = [
-        {label: 'Africa', value: 5 },
-        {label: 'Asia', value: 5 },
-        {label: 'Europe', value: 14 },
-        {label: 'North America', value: 3 },
-        {label: 'South America', value: 5 }
+        { label: 'Africa', value: 5 },
+        { label: 'Asia', value: 5 },
+        { label: 'Europe', value: 14 },
+        { label: 'North America', value: 3 },
+        { label: 'South America', value: 5 }
       ];
 
     Morris.Donut({
@@ -375,16 +376,16 @@
     };
 
     $(function () {
-      var tmp_content = "Morris.Line({<br>&emsp;element: 'chart_line_1',<br>&emsp;data: [<br>&emsp;&emsp;{year: '1958', nb: 1},<br>&emsp;&emsp;{year: '1962', nb: 2},<br>&emsp;&emsp;{year: '1970', nb: 3},<br>&emsp;&emsp;{year: '1994', nb: 4},<br>&emsp;&emsp;{year: '2002', nb: 5},<br>&emsp;],<br>&emsp;xkey: 'year',<br>&emsp;ykeys: ['nb'],<br>&emsp;labels: ['Editions Wins'],<br>});";
+      var tmp_content = "Morris.Line({<br>&emsp;element: 'chart_line_1',<br>&emsp;data: [<br>&emsp;&emsp;{ year: '1958', nb: 1 },<br>&emsp;&emsp;{ year: '1962', nb: 2 },<br>&emsp;&emsp;{ year: '1970', nb: 3 },<br>&emsp;&emsp;{ year: '1994', nb: 4 },<br>&emsp;&emsp;{ year: '2002', nb: 5 },<br>&emsp;],<br>&emsp;xkey: 'year',<br>&emsp;ykeys: ['nb'],<br>&emsp;labels: ['Editions Wins']<br>});";
       $('#std_line').popover({content: tmp_content, html: true});
   
-      tmp_content = "Morris.Bar({<br>&emsp;element: 'chart_hist_1',<br>&emsp;data: [<br>&emsp;&emsp;{team: 'Brazil', nb: 5},<br>&emsp;&emsp;{team: 'Italy', nb: 4},<br>&emsp;&emsp;{team: 'Germany', nb: 4},<br>&emsp;&emsp;{team: 'Uruguay', nb: 2},<br>&emsp;&emsp;{team: 'Argentina', nb: 2},<br>&emsp;],<br>&emsp;xkey: 'team',<br>&emsp;ykeys: ['nb'],<br>&emsp;labels: ['Editions Wins'],<br>});";
+      tmp_content = "Morris.Bar({<br>&emsp;element: 'chart_hist_1',<br>&emsp;data: [<br>&emsp;&emsp;{ team: 'Brazil', nb: 5 },<br>&emsp;&emsp;{ team: 'Italy', nb: 4 },<br>&emsp;&emsp;{ team: 'Germany', nb: 4 },<br>&emsp;&emsp;{ team: 'Uruguay', nb: 2 },<br>&emsp;&emsp;{ team: 'Argentina', nb: 2 }<br>&emsp;],<br>&emsp;xkey: 'team',<br>&emsp;ykeys: ['nb'],<br>&emsp;labels: ['Editions Wins']<br>});";
       $('#std_bar').popover({content: tmp_content, html: true});
 
-      tmp_content = "Morris.Bar({<br>&emsp;element: 'chart_hist_3',<br>&emsp;data: [<br>&emsp;&emsp;{team: 'Brazil', nb: 5, avg: 2.2},<br>&emsp;&emsp;{team: 'Italy', nb: 4, avg: 1.9},<br>&emsp;&emsp;{team: 'Germany', nb: 4, avg: 2.1},<br>&emsp;&emsp;{team: 'Uruguay', nb: 2, avg: 1.4},<br>&emsp;&emsp;{team: 'Argentina', nb: 2, avg: 1.8},<br>],<br>&emsp;xkey: 'team',<br>&emsp;ykeys: ['nb', 'avg'],<br>&emsp;labels: ['Editions Wins', 'Average Points'],<br>&emsp;<strong>nbYkeys2: 1</strong><br>});";
+      tmp_content = "Morris.Bar({<br>&emsp;element: 'chart_hist_3',<br>&emsp;data: [<br>&emsp;&emsp;{ team: 'Brazil', nb: 5, avg: 2.2 },<br>&emsp;&emsp;{ team: 'Italy', nb: 4, avg: 1.9},<br>&emsp;&emsp;{ team: 'Germany', nb: 4, avg: 2.1 },<br>&emsp;&emsp;{ team: 'Uruguay', nb: 2, avg: 1.4 },<br>&emsp;&emsp;{ team: 'Argentina', nb: 2, avg: 1.8 },<br>],<br>&emsp;xkey: 'team',<br>&emsp;ykeys: ['nb', 'avg'],<br>&emsp;labels: ['Editions Wins', 'Average Points'],<br>&emsp;<strong>nbYkeys2: 1</strong><br>});";
       $('#combo_bar').popover({content: tmp_content, html: true});
 
-      tmp_content = "Morris.Donut({<br>&emsp;element: 'chart_pie_1',<br>&emsp;data: [<br>&emsp;&emsp;{label: 'Africa', value: 5 },<br>&emsp;&emsp;{label: 'Asia', value: 5 },<br>&emsp;&emsp;{label: 'Europe', value: 14 },<br>&emsp;&emsp;{label: 'North America', value: 3 },<br>&emsp;&emsp;{label: 'South America', value: 5 }<br>&emsp;]<br>});";
+      tmp_content = "Morris.Donut({<br>&emsp;element: 'chart_pie_1',<br>&emsp;data: [<br>&emsp;&emsp;{ label: 'Africa', value: 5 },<br>&emsp;&emsp;{ label: 'Asia', value: 5 },<br>&emsp;&emsp;{ label: 'Europe', value: 14 },<br>&emsp;&emsp;{ label: 'North America', value: 3 },<br>&emsp;&emsp;{ label: 'South America', value: 5 }<br>&emsp;]<br>});";
       $('#std_donut').popover({content: tmp_content, html: true});
 
       $('[data-toggle="popover"]').popover();
