@@ -1,2 +1,5 @@
 .ruby-version
 _site
+bower_components
+build
+node_modules
