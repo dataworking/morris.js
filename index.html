@@ -1,72 +1,396 @@
----
-layout: default
-morris_version: 0.5.1
----
-<div class="row docrow">
-  <div class="span12 hero">
-    <h1>morris.js 0.6</h1>
-    <p class="tagline">
-      Fork of Morris.js plugin with animation, labels and other improvements
-    </p>
+<!doctype html>
+<html lang='en'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta name='keywords' content='morrisjs,morris,charts,animate,animation,label'>
+    
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://pierresh.github.io/morris.js/css/morris.css' crossorigin='anonymous'>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <title>Morris.js 0.6</title>
+    <style>
+      h1, h2 {
+        font-weight: 300;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      h3 { font-weight: 300; }
+      .chart_morris {
+        height: 250px;
+        width: 100%;
+        background-color: #fff;
+      }
+      canvas { max-height: 250px; }
+    </style>
+  </head>
+<body>
+  <div class='container-fluid'>
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+      <a class='navbar-brand' href='./'>Morris.js 0.6</a>
+      <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+        <span class='navbar-toggler-icon'></span>
+      </button>
+
+      <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+        <ul class='navbar-nav mr-auto'>
+          <li class='nav-item'>
+            <a class='nav-link' href='get_started.html'>Get started</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='lines.html'>Line &amp; Area Charts</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='bars.html'>Bar Charts</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='donuts.html'>Donut Charts</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
-</div>
 
-<hr>
+  <a class='github-ribbon' href='https://github.com/pierresh/morris.js' style='position: fixed; top: 0; right: 0; z-index:2000;'>
+    <img src='https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png' alt='Fork me on GitHub'>
+  </a>
 
-<div class="row">
-  <div class="span6">
-    <div class="graph-container">
-      <div class="caption">Jaguar 'E' Type vehicles in the UK</div>
-      <div id="hero-graph" class="graph"></div>
+  <div class='container-fluid' style='padding-left: 0; padding-right: 0;'>
+    <div style='background-color: #1e242b; color: #fff; padding-top: 116px; padding-bottom: 60px;'>
+      <div class='row' style='margin-left: 0; margin-right: 0;'>
+        <div class='col text-center'>
+          <h1>Morris.js 06</h1>
+          <h2>Fork of morrisjs: no jQuery + awesomeness</h2>
+          <h2>Say goodbye to difficult chart libraries!</h2>
+        </div>
+      </div>
+    </div>
+    <div style='background-color: #fff; color: #4E4852;'>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-sm'>
+            <h2>FIFA World cup won by Brazil</h2>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4 col-sm-12 text-center'>
+            <h3>Standard line chart 
+              <span class='float-right'>
+                <a id='std_line' tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' >
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_line_1' class='chart_morris'></div>
+          </div>
+          <div class='col-md-4 col-sm-12 text-center'>
+            <h3>
+              Trend line
+              <span class='float-right'>
+                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code>...<br>lineWidth: 0,<br>trendLine: true,<br>trendLineType: 'polynomial',<br>...</code></pre>">
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_line_2' class='chart_morris'></div>
+          </div>
+          <div class='col-md-4 col-sm-12 text-center'>
+            <h3>
+              Step chart 
+              <span class='float-right'>
+                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code>...<br>lineType: 'step',<br>...</code></pre>">
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_line_3' class='chart_morris'></div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-sm'>
+            <h1>Teams with the most victories</h1>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-sm-4 text-center'>
+            <h3>
+              Standard bar chart
+              <span class='float-right'>
+                <a id='std_bar' tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true'>
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_hist_1' class='chart_morris'></div>
+          </div>
+          <div class='col-sm-4 text-center'>
+            <h3>
+              Horizontal bar chart
+              <span class='float-right'>
+                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code>...<br>horizontal: true<br>...</code></pre>">
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_hist_2' class='chart_morris'></div>
+          </div>
+          <div class='col-sm-4 text-center'>
+            <h3>
+              Combo chart
+              <span class='float-right'>
+                <a id='combo_bar' tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true'>
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_hist_3' class='chart_morris'></div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class='container'>
+        <div class='row'>
+          <div class='col'>
+            <h1>Teams by continent joining the FIFA World cup 2018</h1>
+          </div>
+        </div>
+        <div class='row' style='margin-bottom: 20px;'>
+          <div class='col-sm-4 text-center'>
+            <h3>
+              Standard donut chart
+              <span class='float-right'>
+                <a id='std_donut' tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true'>
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_pie_1' class='chart_morris'></div>
+            <div id='chart_pie_1_legend' class='text-center'></div>
+          </div>
+          <div class='col-sm-4 text-center'>
+            <h3>
+              Datalabels
+              <span class='float-right'>
+                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code>...<br>dataLabels: true,<br>dataLabelsPosition: 'outside',<br>showPercentage: true,<br>...</code></pre>">
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_pie_2' class='chart_morris'></div>
+            <div id='chart_pie_2_legend' class='text-center'></div>
+          </div>
+          <div class='col-sm-4 text-center'>
+            <h3>
+              Pie chart
+              <span class='float-right'>
+                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code class='text-left'>...<br>dataLabels: true,<br>donutType: 'pie',<br>...</code></pre>">
+                  <i class='fas fa-info-circle'></i>
+                </a>
+              </span>
+            </h3>
+            <div id='chart_pie_3' class='chart_morris'></div>
+            <div id='chart_pie_3_legend'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style='background-color: rgba(29,36,42,0.9); color: #eee;'>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-lg col-sm' style='margin-top: 20px; margin-bottom: 20px;'>
+            <h3>License</h3>
+            <p>Copyright (c) 2012-2014, Olly Smith All rights reserved.</p>
+            <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+            <ul>
+              <li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+              <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+            </ul> 
+            <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+          </h3>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="span6">
-    <div class="graph-container">
-      <div class="caption">iPhone CPU benchmarks</div>
-      <div id="hero-bar" class="graph"></div>
+  <!--
+     style='background-color: #21b2a6; color: #4E4852;'
+
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="span6">
-    <div class="graph-container">
-      <div class="caption">Quarterly Apple iOS device unit sales</div>
-      <div id="hero-area" class="graph"></div>
+    <div style='background-color: #505393; color: #fff;'>
+  
     </div>
-  </div>
-  <div class="span6">
-    <div class="graph-container">
-      <div class="caption">Donut flavours</div>
-      <div id="hero-donut" class="graph"></div>
-    </div>
-  </div>
-</div>
+    <div style='background-color: #fff; color: #4E4852;'>
+  -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
 
-<hr>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js' crossorigin='anonymous'></script>
+  <script src='https://pierresh.github.io/morris.js/js/regression.js' crossorigin='anonymous'></script>
+  <script src='https://pierresh.github.io/morris.js/js/morris.js' crossorigin='anonymous'></script>
+  <script>
+    Morris.Line({
+      element: 'chart_line_1',
+      data: [
+        {year: '1958', nb: 1},
+        {year: '1962', nb: 2},
+        {year: '1970', nb: 3},
+        {year: '1994', nb: 4},
+        {year: '2002', nb: 5},
+      ],
+      xkey: 'year',
+      ykeys: ['nb'],
+      labels: ['Editions Wins'],
+    });
 
-<div class="row">
-  <div class="span3">
-    <ul class="nav nav-list well">
-      <li class="nav-header">Home</li>
-      <li><a href="#getting_started">Getting started</a></li>
-      <li><a href="#your_first_chart">Your first chart</a></li>
-      <li><a href="#license">License</a></li>
-    </ul>
-  </div>
+    Morris.Line({
+      element: 'chart_line_2',
+      data: [
+        {year: '1958', nb: 1},
+        {year: '1962', nb: 2},
+        {year: '1970', nb: 3},
+        {year: '1994', nb: 4},
+        {year: '2002', nb: 5},
+      ],
+      lineWidth: 0,
+      trendLine: true,
+      trendLineType: 'polynomial',
+      xkey: 'year',
+      ykeys: ['nb'],
+      labels: ['Editions Wins']
+    });
 
-  <div class="span9" id="samples">
+    Morris.Line({
+      element: 'chart_line_3',
+      data: [
+        {year: '1958', nb: 1},
+        {year: '1962', nb: 2},
+        {year: '1970', nb: 3},
+        {year: '1994', nb: 4},
+        {year: '2002', nb: 5},
+      ],
+      xkey: 'year',
+      ykeys: ['nb'],
+      labels: ['Editions Wins'],
+      lineType: 'step'
+    });
 
-    {% capture getting_started %}{% include getting_started.md %}{% endcapture %}
-    {{ getting_started|markdownify }}
+    Morris.Bar({
+      element: 'chart_hist_1',
+      data: [
+        {team: 'Brazil', nb: 5},
+        {team: 'Italy', nb: 4},
+        {team: 'Germany', nb: 4},
+        {team: 'Uruguay', nb: 2},
+        {team: 'Argentina', nb: 2},
+      ],
+      xkey: 'team',
+      ykeys: ['nb'],
+      labels: ['Editions Wins'],
+    });
 
-    {% capture first_chart %}{% include your_first_chart.md %}{% endcapture %}
-    {{ first_chart|markdownify }}
+    Morris.Bar({
+      element: 'chart_hist_2',
+      data: [
+        {team: 'Brazil', nb: 5},
+        {team: 'Italy', nb: 4},
+        {team: 'Germany', nb: 4},
+        {team: 'Uruguay', nb: 2},
+        {team: 'Argentina', nb: 2},
+      ],
+      horizontal: true,
+      xkey: 'team',
+      ykeys: ['nb'],
+      labels: ['Editions Wins'],
+    });
 
-    {% capture what_next %}{% include what_next.md %}{% endcapture %}
-    {{ what_next|markdownify }}
+    Morris.Bar({
+      element: 'chart_hist_3',
+      data: [
+        {team: 'Brazil', nb: 5, avg: 2.2},
+        {team: 'Italy', nb: 4, avg: 1.9},
+        {team: 'Germany', nb: 4, avg: 2.1},
+        {team: 'Uruguay', nb: 2, avg: 1.4},
+        {team: 'Argentina', nb: 2, avg: 1.8},
+      ],
+      xkey: 'team',
+      ykeys: ['nb', 'avg'],
+      labels: ['Editions Wins', 'Average Points'],
+      nbYkeys2: 1,
+    });
 
-    {% capture license %}{% include license.md %}{% endcapture %}
-    {{ license|markdownify }}
+    pie_data = [
+        {label: 'Africa', value: 5 },
+        {label: 'Asia', value: 5 },
+        {label: 'Europe', value: 14 },
+        {label: 'North America', value: 3 },
+        {label: 'South America', value: 5 }
+      ];
 
-  </div>
-</div>
+    Morris.Donut({
+      element: 'chart_pie_1',
+      data: pie_data
+    }).options.colors.forEach(function(color, a){ 
+      if (pie_data[a] != undefined) {
+        var node = document.createElement('span');
+        node.innerHTML += '<span style="color:'+color+'"><i style="margin-left: 15px;" class="fas fa-square"></i> '+pie_data[a].label+'</span>';
+        document.getElementById("chart_pie_1_legend").appendChild(node);
+      }
+    });
+
+    Morris.Donut({
+      element: 'chart_pie_2',
+      data: pie_data,
+      dataLabels: true,
+      showPercentage: true,
+      dataLabelsPosition: 'outside'
+    }).options.colors.forEach(function(color, a){ 
+      if (pie_data[a] != undefined) {
+        var node = document.createElement('span');
+        node.innerHTML += '<span style="color:'+color+'"><i style="margin-left: 15px;" class="fas fa-square"></i> '+pie_data[a].label+'</span>';
+        document.getElementById("chart_pie_2_legend").appendChild(node);
+      }
+    });
+
+    Morris.Donut({
+      element: 'chart_pie_3',
+      data: pie_data,
+      donutType: 'pie',
+      dataLabels: true
+    }).options.colors.forEach(function(color, a){ 
+      if (pie_data[a] != undefined) {
+        var node = document.createElement('span');
+        node.innerHTML += '<span style="color:'+color+'"><i style="margin-left: 15px;" class="fas fa-square"></i> '+pie_data[a].label+'</span>';
+        document.getElementById("chart_pie_3_legend").appendChild(node);
+      }
+    });
+
+    window.onresize = function(event) {
+      console.log('Window resized');
+    };
+
+    $(function () {
+      var tmp_content = "Morris.Line({<br>&emsp;element: 'chart_line_1',<br>&emsp;data: [<br>&emsp;&emsp;{year: '1958', nb: 1},<br>&emsp;&emsp;{year: '1962', nb: 2},<br>&emsp;&emsp;{year: '1970', nb: 3},<br>&emsp;&emsp;{year: '1994', nb: 4},<br>&emsp;&emsp;{year: '2002', nb: 5},<br>&emsp;],<br>&emsp;xkey: 'year',<br>&emsp;ykeys: ['nb'],<br>&emsp;labels: ['Editions Wins'],<br>});";
+      $('#std_line').popover({content: tmp_content, html: true});
+  
+      tmp_content = "Morris.Bar({<br>&emsp;element: 'chart_hist_1',<br>&emsp;data: [<br>&emsp;&emsp;{team: 'Brazil', nb: 5},<br>&emsp;&emsp;{team: 'Italy', nb: 4},<br>&emsp;&emsp;{team: 'Germany', nb: 4},<br>&emsp;&emsp;{team: 'Uruguay', nb: 2},<br>&emsp;&emsp;{team: 'Argentina', nb: 2},<br>&emsp;],<br>&emsp;xkey: 'team',<br>&emsp;ykeys: ['nb'],<br>&emsp;labels: ['Editions Wins'],<br>});";
+      $('#std_bar').popover({content: tmp_content, html: true});
+
+      tmp_content = "Morris.Bar({<br>&emsp;element: 'chart_hist_3',<br>&emsp;data: [<br>&emsp;&emsp;{team: 'Brazil', nb: 5, avg: 2.2},<br>&emsp;&emsp;{team: 'Italy', nb: 4, avg: 1.9},<br>&emsp;&emsp;{team: 'Germany', nb: 4, avg: 2.1},<br>&emsp;&emsp;{team: 'Uruguay', nb: 2, avg: 1.4},<br>&emsp;&emsp;{team: 'Argentina', nb: 2, avg: 1.8},<br>],<br>&emsp;xkey: 'team',<br>&emsp;ykeys: ['nb', 'avg'],<br>&emsp;labels: ['Editions Wins', 'Average Points'],<br>&emsp;<strong>nbYkeys2: 1</strong><br>});";
+      $('#combo_bar').popover({content: tmp_content, html: true});
+
+      tmp_content = "Morris.Donut({<br>&emsp;element: 'chart_pie_1',<br>&emsp;data: [<br>&emsp;&emsp;{label: 'Africa', value: 5 },<br>&emsp;&emsp;{label: 'Asia', value: 5 },<br>&emsp;&emsp;{label: 'Europe', value: 14 },<br>&emsp;&emsp;{label: 'North America', value: 3 },<br>&emsp;&emsp;{label: 'South America', value: 5 }<br>&emsp;]<br>});";
+      $('#std_donut').popover({content: tmp_content, html: true});
+
+      $('[data-toggle="popover"]').popover();
+    });
+  </script>
+</body>
+</html>

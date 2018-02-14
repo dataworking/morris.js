@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta name='keywords' content='morrisjs,morris,charts,animate,animation,label'>
+    
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://pierresh.github.io/morris.js/css/morris.css' crossorigin='anonymous'>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js' crossorigin='anonymous'></script>
+    <script src='https://pierresh.github.io/morris.js/js/morris.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <title>Morris.js 0.6</title>
+    <style>
+      h1, h2 {
+        font-weight: 300;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      h3 { font-weight: 300; }
+      .chart_morris {
+        height: 250px;
+        width: 100%;
+        background-color: #fff;
+      }
+      canvas { max-height: 250px; }
+      pre, p.no_margin { margin-bottom: 0; }
+    </style>
+  </head>
+  <body>
+    <div class='container-fluid'>
+      <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+        <a class='navbar-brand' href='./'>Morris.js 0.6</a>
+        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul class='navbar-nav mr-auto'>
+            <li class='nav-item'>
+              <a class='nav-link active' href='get_started.html'>Get started</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='lines.html'>Line &amp; Area Charts</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='bars.html'>Bar Charts</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='donuts.html'>Donut Charts</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <a class='github-ribbon' href='https://github.com/pierresh/morris.js' style='position: fixed; top: 0; right: 0; z-index:2000;'>
+      <img src='https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png' alt='Fork me on GitHub'>
+    </a>
+    <div class='container'>
+      <div class='row'>
+        <div class='col'>
+          <h3 style='margin-top: 86px;'>Installation</h3>
+          <p>You can either download the latest version of Morris.js06 from the <a href='https://github.com/pierresh/morris.js/releases/latest' target=_blank>GitHub releases</a>.</p>
+          <p class='no_margin'>Or install via npm:</p>
+          <pre>
+            <code class='bash'>
+              npm install morris.js06
+            </code>
+          </pre>
+          <p>Then add <em>morris.min.js</em>, <em>morris.css</em> and <em>raphael-min.js</em> to your page.</p>
+          <p class='no_margin'><a href='http://dmitrybaranovskiy.github.io/raphael/' target=_blank>Raphaël</a> can be added to your page through a CDN:</p>
+          <pre>
+            <code class='html'>
+              &lt;script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"&gt;&lt;/script&gt;
+            </code>
+          </pre>
+          <h3>Your first chart</h3>
+          <p class='no_margin'>Start by adding a <code>&lt;div&gt;</code> to your page that will contain your chart. Make sure it has an ID so you can refer to it in your Javascript later.</p>
+          <pre>
+            <code class='html'>
+              &lt;div id="myfirstchart"&gt;&lt;/div&gt;
+            </code>
+          </pre>
+          <p class='no_margin'>
+            Next add a <code>&lt;script&gt;</code> block to the end of your page, containing the following javascript code:
+          </p>
+          <pre>
+            <code class='language-javascript' data-lang='javascript'>
+              new Morris.Line({
+                // ID of the element in which to draw the chart.
+                element: 'myfirstchart',
+                // Chart data records -- each entry in this array corresponds to a point on
+                // the chart.
+                data: [
+                  { year: '2014', value: 20 },
+                  { year: '2015', value: 10 },
+                  { year: '2016', value: 5 },
+                  { year: '2017', value: 5 },
+                  { year: '2018', value: 20 }
+                ],
+                // The name of the data record attribute that contains x-values.
+                xkey: 'year',
+                // A list of names of data record attributes that contain y-values.
+                ykeys: ['value'],
+                // Labels for the ykeys -- will be displayed when you hover over the
+                // chart.
+                labels: ['Value']
+              });
+            </code>
+          </pre>
+          <p>Assuming everything’s working correctly, you should see the following chart on your page:</p>
+          <div id='myfirstchart'</div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <h3 style='margin-top: 30px;'>What Next?</h3>
+        <p>Check out the rest of the documentation:</p>
+        <ul>
+          <li><a href='lines.html'>Line and area charts</a></li>
+          <li><a href='bars.html'>Bar charts</a></li>
+          <li><a  href='donuts.html'>Donut and pie charts</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+        new Morris.Line({
+          // ID of the element in which to draw the chart.
+          element: 'myfirstchart',
+          // Chart data records -- each entry in this array corresponds to a point on
+          // the chart.
+          data: [
+            { year: '2014', value: 20 },
+            { year: '2015', value: 10 },
+            { year: '2016', value: 5 },
+            { year: '2017', value: 5 },
+            { year: '2018', value: 20 }
+          ],
+          // The name of the data record attribute that contains x-values.
+          xkey: 'year',
+          // A list of names of data record attributes that contain y-values.
+          ykeys: ['value'],
+          // Labels for the ykeys -- will be displayed when you hover over the
+          // chart.
+          labels: ['Value']
+        });
+    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
