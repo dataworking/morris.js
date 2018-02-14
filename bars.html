@@ -14,7 +14,7 @@
     <script src='https://pierresh.github.io/morris.js/js/morris.js' crossorigin='anonymous'></script>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css'>
     <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'></script>
-    <title>Morris.js 0.6</title>
+    <title>Morris.js 06 - Bar charts</title>
     <style>
       h1, h2 {
         font-weight: 300;
@@ -206,11 +206,7 @@
                 <tr>
                   <td><code>resize</code></td>
                   <td>
-                    Set to <code>true</code> to enable automatic resizing when the
-                    containing element resizes. (default: false).
-                    <br>
-                    This has a significant performance impact, so is disabled by
-                    default.
+                    Set to <code>false</code> to disable automatic resizing when the containing element resizes. (default: true).
                   </td>
                 </tr>
                 <tr>
@@ -244,6 +240,12 @@
                     This to set which how many ykeys would be displayed as line instead of bar, from the end of ykeys array (default: 0).
                   </td>
                 </tr>
+                <tr>
+                  <td><code>showZero</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>false</code> to do not display a thin line when values equal to 0 (default: true).
+                  </td>
+                </tr>showZero
               </tbody>
             </table>
           </div>

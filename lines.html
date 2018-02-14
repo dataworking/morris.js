@@ -14,7 +14,7 @@
     <script src='https://pierresh.github.io/morris.js/js/morris.js' crossorigin='anonymous'></script>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css'>
     <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'></script>
-    <title>Morris.js 0.6</title>
+    <title>Morris.js 06 - Line and Area charts</title>
     <style>
       h1, h2 {
         font-weight: 300;
@@ -192,6 +192,7 @@
                     <code>[num]</code>.
                   </td>
                 </tr>
+                <tr>
                   <td><code>ymin</code></td>
                   <td>
                     Min. bound for Y-values.  Alternatively, set this to
@@ -205,7 +206,6 @@
                       false origins.
                     </em>
                   </td>
-                <tr>
                 </tr>
                 <tr>
                   <td><code>smooth</code></td>
@@ -406,32 +406,21 @@
                 <tr>
                   <td><code>grid</code></td>
                   <td>
-                    Set to <code>false</code> to disable drawing the horizontal
-                    grid lines.
+                    Set to <code>false</code> to disable drawing the horizontal grid lines.<br>
+                    The style of grid can be customised through <code>gridTextColor</code> (default: #888), <code>gridTextSize</code> (default: 12), <code>gridTextFamily</code> (default: sans-serif) and <code>gridTextWeight</code> (default: normal)
+                  </td>
+                </tr>
+               <tr>
+                  <td><code>verticalGrid</code></td>
+                  <td>
+                    Set to <code>true</code> to display vertical grid lines (default: false).
                   </td>
                 </tr>
                 <tr>
-                  <td><code>gridTextColor</code></td>
+                  <td><code>verticalGridType</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set the color of the axis labels (default: #888).
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>gridTextSize</code></td>
-                  <td>
-                    Set the point size of the axis labels (default: 12).
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>gridTextFamily</code></td>
-                  <td>
-                    Set the font family of the axis labels (default: sans-serif).
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>gridTextWeight</code></td>
-                  <td>
-                    Set the font weight of the axis labels (default: normal).
+                    This is to set the type of dash / dot of the vertical grid (default: <code>''</code>).<br>
+                    This can be set either <code>''</code>, <code>'-'</code>, <code>'.'</code>, <code>'-.'</code>, <code>'-..'</code>, <code>'. '</code>, <code>'- '</code>, <code>'--'</code>, <code>'- .'</code>, <code>'--.'</code>, <code>'--..'</code>
                   </td>
                 </tr>
                 <tr>
@@ -445,24 +434,39 @@
                 <tr>
                   <td><code>resize</code></td>
                   <td>
-                    Set to <code>true</code> to enable automatic resizing when the
-                    containing element resizes. (default: false).
-                    <br>
-                    This has a significant performance impact, so is disabled by
-                    default.
+                    Set to <code>false</code> to disable automatic resizing when the containing element resizes (default: true).
                   </td>
                 </tr>
                 <tr>
                   <td><code>animate</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>false</code> to disable chart animation. (default: true).
+                    Set to <code>false</code> to disable chart animation (default: true).
                   </td>
                 </tr>
                 <tr>
                   <td><code>dataLabels</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>true</code> to display values above points. (default: false).<br><br>
+                    Set to <code>true</code> to display values above points (default: false).<br><br>
                     Appearance of label can be customized through properties <code>dataLabelsFamily</code>, <code>dataLabelsSize</code>, <code>dataLabelsWeight</code> and <code>dataLabelsColor</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>trendLine</code></td>
+                  <td>
+                    Set to <code>true</code> to display the trend line of the serie (default: false).<br><br>
+                    Appearance of trend lines can be customized through properties <code>trendLineWidth</code>, <code>trendLineWeight</code> and <code>trendLineColors</code> (array).
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>trendLineType</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    This is to define the type of trend line to be computed. Default value is <code>linear</code>. It can be set to <code>polynomial</code>, <code>logarithmic</code> or <code>exponential</code> if <a href='https://github.com/Tom-Alexander/regression-js/releases/tag/1.4.0' target=_blank>regression.js 1.4</a> is loaded.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>pointSuperimposed</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>false</code> to offset redundant points in order to prevent them to hover each others (default: true).
                   </td>
                 </tr>
               </tbody>

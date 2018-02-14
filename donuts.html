@@ -14,7 +14,7 @@
     <script src='https://pierresh.github.io/morris.js/js/morris.js' crossorigin='anonymous'></script>
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css'>
     <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'></script>
-    <title>Morris.js 0.6</title>
+    <title>Morris.js 06 - Donut charts</title>
     <style>
       h1, h2 {
         font-weight: 300;
@@ -132,11 +132,7 @@
                 <tr>
                   <td><code>resize</code></td>
                   <td>
-                    Set to <code>true</code> to enable automatic resizing when the
-                    containing element resizes. (default: false).
-                    <br>
-                    This has a significant performance impact, so is disabled by
-                    default.
+                    Set to <code>false</code> to enable automatic resizing when the containing element resizes. (default: true).
                   </td>
                 </tr>
                 <tr>
@@ -162,6 +158,12 @@
                   <td><code>dataLabelsPosition</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
                     Set to <code>inside</code> to display values inside donut/pie's segments. (default: outside).
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>showPercentage</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>true</code> to display percentage instead of values (default: false).
                   </td>
                 </tr>
               </tbody>
