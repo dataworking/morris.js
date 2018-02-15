@@ -177,8 +177,7 @@
                 <tr>
                   <td><code>pointStrokeColors</code></td>
                   <td>
-                    Colors for the outlines of the series points. (#ffffff by
-                    default).
+                    Colors for the outlines of the series points. (default <code>#ffffff</code>).
                   </td>
                 </tr>
                 <tr>
@@ -228,7 +227,7 @@
                   <td>
                     Provide a function on this option to generate custom
                     hover legends.
-                    <br>
+                    <br><br>
                     The function will be called with the index of the row under
                     the hover legend, the options object passed to the constructor
                     as arguments, a string containing the default generated hover legend
@@ -236,9 +235,9 @@
                     row as passed in the <code>data</code> option.
                     <br>
                     <em>eg:</em>
-                    <pre>hoverCallback: function (index, options, content, row) {
-                      return "sin(" + row.x + ") = " + row.y;
-                    }</pre>
+                    <pre class='javascript'><code>hoverCallback: function (index, options, content, row) {
+    return "sin(" + row.x + ") = " + row.y;
+}</code></pre>
                   </td>
                 </tr>
                 <tr>
@@ -277,7 +276,7 @@
                     A function that accepts millisecond timestamps and formats
                     them for display as chart labels.
                     <br>
-                    default: <code>function (x) { return new Date(x).toString(); }</code>
+                    default: <pre class='javascript'><code>function (x) { return new Date(x).toString(); }</code></pre>
                   </td>
                 </tr>
                 <tr>
@@ -314,7 +313,7 @@
                     formatter chosen by the automatic labeller or the
                     <code>xLabels</code> option.
                     <br>
-                    eg: <code>function (x) { return x.toString(); }</code>
+                    eg: <pre class='javascript'><code>function (x) { return x.toString(); }</code></pre>
                   </td>
                 </tr>
                 <tr>
@@ -329,7 +328,7 @@
                     A function that accepts y-values and formats
                     them for display as y-axis labels.
                     <br>
-                    eg: <code>function (y) { return y.toString() + 'km'; }</code>
+                    eg: <pre class='javascript'><code>function (y) { return y.toString() + 'km'; }</code></pre>
                   </td>
                 </tr>
                 <tr>
@@ -406,13 +405,13 @@
                   <td><code>grid</code></td>
                   <td>
                     Set to <code>false</code> to disable drawing the horizontal grid lines.<br>
-                    The style of grid can be customised through <code>gridTextColor</code> (default: #888), <code>gridTextSize</code> (default: 12), <code>gridTextFamily</code> (default: sans-serif) and <code>gridTextWeight</code> (default: normal)
+                    The style of grid can be customised through <code>gridTextColor</code> (default: <code>#888</code>), <code>gridTextSize</code> (default: 12), <code>gridTextFamily</code> (default: sans-serif) and <code>gridTextWeight</code> (default: normal)
                   </td>
                 </tr>
                <tr>
                   <td><code>verticalGrid</code></td>
                   <td>
-                    Set to <code>true</code> to display vertical grid lines (default: false).
+                    Set to <code>true</code> to display vertical grid lines (default: <code>false</code>).
                   </td>
                 </tr>
                 <tr>
@@ -433,39 +432,39 @@
                 <tr>
                   <td><code>resize</code></td>
                   <td>
-                    Set to <code>false</code> to disable automatic resizing when the containing element resizes (default: true).
+                    Set to <code>false</code> to disable automatic resizing when the containing element resizes (default: <code>true</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>animate</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>false</code> to disable chart animation (default: true).
+                    Set to <code>false</code> to disable chart animation (default: <code>true</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>dataLabels</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>true</code> to display values above points (default: false).<br><br>
+                    Set to <code>true</code> to display values above points (default: <code>false</code>).<br><br>
                     Appearance of label can be customized through properties <code>dataLabelsFamily</code>, <code>dataLabelsSize</code>, <code>dataLabelsWeight</code> and <code>dataLabelsColor</code>.
                   </td>
                 </tr>
                 <tr>
                   <td><code>trendLine</code></td>
                   <td>
-                    Set to <code>true</code> to display the trend line of the serie (default: false).<br><br>
+                    Set to <code>true</code> to display the trend line of the serie (default: <code>false</code>).<br><br>
                     Appearance of trend lines can be customized through properties <code>trendLineWidth</code>, <code>trendLineWeight</code> and <code>trendLineColors</code> (array).
                   </td>
                 </tr>
                 <tr>
                   <td><code>trendLineType</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    This is to define the type of trend line to be computed. Default value is <code>linear</code>. It can be set to <code>polynomial</code>, <code>logarithmic</code> or <code>exponential</code> if <a href='https://github.com/Tom-Alexander/regression-js/releases/tag/1.4.0' target=_blank>regression.js 1.4</a> is loaded.
+                    This is to define the type of trend line to be computed. Default value is <code>linear</code>. It can be set to <code>polynomial</code>, <code>logarithmic</code> or <code>exponential</code> if <a href='https://github.com/Tom-Alexander/regression-js/releases/tag/1.4.0' target=_blank>regression.js 1.4.0</a> is loaded.
                   </td>
                 </tr>
                 <tr>
                   <td><code>pointSuperimposed</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>false</code> to offset redundant points in order to prevent them to hover each others (default: true).
+                    Set to <code>false</code> to offset redundant points in order to prevent them to hover each others (default: <code>true</code>).
                   </td>
                 </tr>
               </tbody>
@@ -487,11 +486,11 @@
       Morris.Line({
         element: 'chart_line',
         data: [
-          {year: '1958', nb: 1},
-          {year: '1962', nb: 2},
-          {year: '1970', nb: 3},
-          {year: '1994', nb: 4},
-          {year: '2002', nb: 5},
+          { year: '1958', nb: 1 },
+          { year: '1962', nb: 2 },
+          { year: '1970', nb: 3 },
+          { year: '1994', nb: 4 },
+          { year: '2002', nb: 5 }
         ],
         xkey: 'year',
         ykeys: ['nb'],
@@ -589,5 +588,7 @@
       });
     </script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
   </body>
 </html>

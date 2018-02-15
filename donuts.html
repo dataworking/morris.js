@@ -120,7 +120,7 @@
                     A function that will translate a y-value into a label for
                     the centre of the donut.
                     <br>
-                    eg: currency <code>function (y, <em>data</em>) { return '$' + y }</code>
+                    eg: currency <pre class='javascript'><code>function (y, data) { return '$' + y }</code></pre>
                     <br>
                     <em>
                       Note: if required, the method is also passed an optional second
@@ -131,38 +131,38 @@
                 <tr>
                   <td><code>resize</code></td>
                   <td>
-                    Set to <code>false</code> to enable automatic resizing when the containing element resizes. (default: true).
+                    Set to <code>false</code> to enable automatic resizing when the containing element resizes. (default: <code>true</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>donutType</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>pie</code> to display the chart as a pie chart instead of donut. (default: donut).
+                    Set to <code>pie</code> to display the chart as a pie chart instead of donut. (default: <code>donut</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>animate</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>false</code> to disable chart animation. (default: true).
+                    Set to <code>false</code> to disable chart animation. (default: <code>true</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>dataLabels</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>true</code> to display values close to donut/pie's segments. (default: false).<br><br>
+                    Set to <code>true</code> to display values close to donut/pie's segments. (default: <code>false</code>).<br><br>
                     Appearance of label can be customized through properties <code>dataLabelsFamily</code>, <code>dataLabelsSize</code>, <code>dataLabelsWeight</code> and <code>dataLabelsColor</code>.
                   </td>
                 </tr>
                 <tr>
                   <td><code>dataLabelsPosition</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>inside</code> to display values inside donut/pie's segments. (default: outside).
+                    Set to <code>inside</code> to display values inside donut/pie's segments. (default: <code>outside</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>showPercentage</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>true</code> to display percentage instead of values (default: false).
+                    Set to <code>true</code> to display percentage instead of values (default: <code>false</code>).
                   </td>
                 </tr>
               </tbody>
@@ -213,5 +213,7 @@
       });
     </script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
   </body>
 </html>

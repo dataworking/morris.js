@@ -159,9 +159,9 @@
                     row as passed in the <code>data</code> option.
                     <br>
                     <em>eg:</em>
-                    <pre>hoverCallback: function (index, options, content, row) {
+                    <pre class='javascript'><code>hoverCallback: function (index, options, content, row) {
           return "sin(" + row.x + ") = " + row.y;
-        }</pre>
+}</code></pre>
                   </td>
                 </tr>
                 <tr>
@@ -181,56 +181,56 @@
                 <tr>
                   <td><code>gridTextColor</code></td>
                   <td>
-                    Set the color of the axis labels (default: #888).
+                    Set the color of the axis labels (default: <code>#888</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>gridTextSize</code></td>
                   <td>
-                    Set the point size of the axis labels (default: 12).
+                    Set the point size of the axis labels (default: <code>12</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>gridTextFamily</code></td>
                   <td>
-                    Set the font family of the axis labels (default: sans-serif).
+                    Set the font family of the axis labels (default: <code>sans-serif</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>gridTextWeight</code></td>
                   <td>
-                    Set the font weight of the axis labels (default: normal).
+                    Set the font weight of the axis labels (default: <code>normal</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>resize</code></td>
                   <td>
-                    Set to <code>false</code> to disable automatic resizing when the containing element resizes. (default: true).
+                    Set to <code>false</code> to disable automatic resizing when the containing element resizes. (default: <code>true</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>horizontal</code></td>
                   <td>
-                    Set to <code>true</code> to display the bar chart horizontally (default: false).
+                    Set to <code>true</code> to display the bar chart horizontally (default: <code>false</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>animate</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>false</code> to disable chart animation (default: true).
+                    Set to <code>false</code> to disable chart animation (default: <code>true</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>dataLabels</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>true</code> to display values of bar charts (default: false).<br><br>
+                    Set to <code>true</code> to display values of bar charts (default: <code>false</code>).<br><br>
                     Appearance of label can be customized through properties <code>dataLabelsFamily</code>, <code>dataLabelsSize</code>, <code>dataLabelsWeight</code> and <code>dataLabelsColor</code>.
                   </td>
                 </tr>
                 <tr>
                   <td><code>dataLabelsPosition</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>inside</code> to display values inside donut/pie's segments (default: outside).
+                    Set to <code>inside</code> to display values inside donut/pie's segments (default: <code>outside</code>).
                   </td>
                 </tr>
                 <tr>
@@ -242,9 +242,9 @@
                 <tr>
                   <td><code>showZero</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
-                    Set to <code>false</code> to do not display a thin line when values equal to 0 (default: true).
+                    Set to <code>false</code> to do not display a thin line when values equal to 0 (default: <code>true</code>).
                   </td>
-                </tr>showZero
+                </tr>
               </tbody>
             </table>
           </div>
@@ -299,5 +299,7 @@
       });
     </script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous'></script>
   </body>
 </html>
