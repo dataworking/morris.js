@@ -63,8 +63,40 @@
     <div class='container'>
       <div class='row'>
         <div class='col'>
-          <h1 style='margin-top: 86px;'>Bar Charts</h1>
-          <hr>
+          <h1 style='margin-top: 86px;'>Example</h1>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-sm-6'>
+          <pre>
+            <code class='html'>
+    &lt;div id='chart_line'>&lt;/div&gt;
+    &lt;script&gt;
+      Morris.Bar({
+        element: 'chart_bar',
+        data: [
+          { team: 'Brazil', nb: 5 },
+          { team: 'Italy', nb: 4 },
+          { team: 'Germany', nb: 4 },
+          { team: 'Uruguay', nb: 2 },
+          { team: 'Argentina', nb: 2 }
+        ],
+        xkey: 'team',
+        ykeys: ['nb'],
+        labels: ['Editions Wins']
+      });
+    &lt;/script&gt;
+            </code>
+          </pre>
+        </div>
+        <div class='col-sm-6'>
+          <div id='chart_bar'></div>
+        </div>
+      </div>
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h1>Configuration</h1>
           <p>
             Create bar charts using <code>Morris.Bar(<em>options</em>)</code>,
             where options is an object containing the following configuration
@@ -248,38 +280,6 @@
               </tbody>
             </table>
           </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col'>
-          <h3>Example</h3>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col-sm-6'>
-          <pre>
-            <code class='html'>
-    &lt;div id='chart_line'>&lt;/div&gt;
-    &lt;script&gt;
-      Morris.Bar({
-        element: 'chart_bar',
-        data: [
-          { team: 'Brazil', nb: 5 },
-          { team: 'Italy', nb: 4 },
-          { team: 'Germany', nb: 4 },
-          { team: 'Uruguay', nb: 2 },
-          { team: 'Argentina', nb: 2 }
-        ],
-        xkey: 'team',
-        ykeys: ['nb'],
-        labels: ['Editions Wins']
-      });
-    &lt;/script&gt;
-            </code>
-          </pre>
-        </div>
-        <div class='col-sm-6'>
-          <div id='chart_bar'></div>
         </div>
       </div>
     </div>

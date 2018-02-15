@@ -63,13 +63,49 @@
     <div class='container'>
       <div class='row'>
         <div class='col'>
-          <h1 style='margin-top: 86px;'>Line & Area Charts</h1>
+          <h1 style='margin-top: 86px;'>Line Charts</h1>
           <hr>
-          <h2 id="lines">Line Charts</h2>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col'>
+          <h2>Example</h2>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-sm-6'>
+          <pre>
+            <code class='html'>
+    &lt;div id='chart_line'&gt;&lt;/div&gt;
+    &lt;script&gt;
+      Morris.Line({
+        element: 'chart_line',
+        data: [
+          { year: '1958', nb: 1 },
+          { year: '1962', nb: 2 },
+          { year: '1970', nb: 3 },
+          { year: '1994', nb: 4 },
+          { year: '2002', nb: 5 }
+        ],
+        xkey: 'year',
+        ykeys: ['nb'],
+        labels: ['Editions Wins']
+      });
+    &lt;/script&gt;
+            </code>
+          </pre>
+        </div>
+        <div class='col-sm-6'>
+          <div id='chart_line'></div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col'>
+          <h2 id="lines">Configuration</h2>
           <p>
             The public API is terribly simple.  It's just one function:
             <code>Morris.Line(<em>options</em>)</code>, where options is an
-            object containing some of the following configuration options.
+            object containing some of the following configuration options:
           </p>
           <div class='table-responsive'>
             <table class="table table-striped table-bordered">
@@ -474,39 +510,7 @@
       </div>
       <div class='row'>
         <div class='col'>
-          <h3>Example</h3>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col-sm-6'>
-          <pre>
-            <code class='html'>
-    &lt;div id='chart_line'&gt;&lt;/div&gt;
-    &lt;script&gt;
-      Morris.Line({
-        element: 'chart_line',
-        data: [
-          { year: '1958', nb: 1 },
-          { year: '1962', nb: 2 },
-          { year: '1970', nb: 3 },
-          { year: '1994', nb: 4 },
-          { year: '2002', nb: 5 }
-        ],
-        xkey: 'year',
-        ykeys: ['nb'],
-        labels: ['Editions Wins']
-      });
-    &lt;/script&gt;
-            </code>
-          </pre>
-        </div>
-        <div class='col-sm-6'>
-          <div id='chart_line'></div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='col'>
-          <h2 id="areas">Area Charts</h2>
+          <h1 id="areas">Area Charts</h1>
           <p>
             Create an area chart using <code>Morris.Area(<em>options</em>)</code>.
             Area charts take all the same options as line charts, and the following
