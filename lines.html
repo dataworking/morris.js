@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <meta name='keywords' content='morrisjs,morris,charts,animate,animation,label'>
-    
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico'>
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
     <link rel='stylesheet' href='https://pierresh.github.io/morris.js/css/morris.css' crossorigin='anonymous'>
@@ -194,26 +194,37 @@
                 <tr>
                   <td><code>lineWidth</code></td>
                   <td>
-                    Width of the series lines, in pixels.
+                    Width of the series lines, in pixels (default <code>3</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>pointSize</code></td>
                   <td>
-                    Diameter of the series points, in pixels.
+                    Diameter of the series points, in pixels (default <code>4</code>).
                   </td>
                 </tr>
                 <tr>
                   <td><code>pointFillColors</code></td>
                   <td>
-                    Colors for the series points.  By default uses the same
-                    values as <code>lineColors</code>
+                    Colors for the series points.  By default uses the same values as <code>lineColors</code>
                   </td>
                 </tr>
                 <tr>
                   <td><code>pointStrokeColors</code></td>
                   <td>
-                    Colors for the outlines of the series points. (default <code>#ffffff</code>).
+                    Colors for the outlines of the series points (default <code>#ffffff</code>).
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>pointSizeGrow</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                     This is the size grow in pixel of hovered point (default <code>3</code>).
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>pointSuperimposed</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>false</code> to offset redundant points in order to prevent them to hover each others (default: <code>true</code>).
                   </td>
                 </tr>
                 <tr>
@@ -495,12 +506,6 @@
                   <td><code>trendLineType</code><br><span class='badge badge-primary'>new v0.6</span></td>
                   <td>
                     This is to define the type of trend line to be computed. Default value is <code>linear</code>. It can be set to <code>polynomial</code>, <code>logarithmic</code> or <code>exponential</code> if <a href='https://github.com/Tom-Alexander/regression-js/releases/tag/1.4.0' target=_blank>regression.js 1.4.0</a> is loaded.
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>pointSuperimposed</code><br><span class='badge badge-primary'>new v0.6</span></td>
-                  <td>
-                    Set to <code>false</code> to offset redundant points in order to prevent them to hover each others (default: <code>true</code>).
                   </td>
                 </tr>
               </tbody>
