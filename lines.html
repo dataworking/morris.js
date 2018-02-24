@@ -469,14 +469,6 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><code>fillOpacity</code></td>
-                  <td>
-                    Change the opacity of the area fill colour. Accepts values
-                    between 0.0 (for completely transparent) and 1.0 (for completely
-                    opaque).
-                  </td>
-                </tr>
-                <tr>
                   <td><code>resize</code></td>
                   <td>
                     Set to <code>false</code> to disable automatic resizing when the containing element resizes (default: <code>true</code>).
@@ -508,6 +500,18 @@
                     This is to define the type of trend line to be computed. Default value is <code>linear</code>. It can be set to <code>polynomial</code>, <code>logarithmic</code> or <code>exponential</code> if <a href='https://github.com/Tom-Alexander/regression-js/releases/tag/1.4.0' target=_blank>regression.js 1.4.0</a> is loaded.
                   </td>
                 </tr>
+                <tr>
+                  <td><code>hoverOrdered</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>true</code> to display content in hover according to points value instead of series order (default: <code>false</code>).
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>hoverReversed</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                  <td>
+                    Set to <code>true</code> to reverse order of content in hover (default: <code>false</code>).
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -524,10 +528,30 @@
           <table class="table table-striped table-bordered">
             <tbody>
               <tr>
-                <td><code>behaveLikeLine</code></td>
+                <td style='min-width: 200px;'><code>behaveLikeLine</code></td>
                 <td>
                   Set to <code>true</code> to overlay the areas on top of each
                   other instead of stacking them.
+                </td>
+              </tr>
+              <tr>
+                <td><code>fillOpacity</code></td>
+                <td>
+                  Change the opacity of the area fill colour. Accepts values
+                  between 0.0 (for completely transparent) and 1.0 (for completely
+                  opaque).
+                </td>
+              </tr>
+              <tr>
+                <td><code>belowArea</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                <td>
+                  Set to <code>false</code> to do not display the area below the first line (default <code>true</code>).
+                </td>
+              </tr>
+              <tr>
+                <td><code>areaColors</code><br><span class='badge badge-primary'>new v0.6</span></td>
+                <td>
+                  Array containing colors for the series lines/points. if empty, it is equals to values of <code>lineColors</code>.
                 </td>
               </tr>
             </tbody>
