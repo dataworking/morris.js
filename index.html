@@ -293,6 +293,7 @@
       xkey: 'team',
       ykeys: ['nb'],
       labels: ['Editions Wins'],
+      animate: false
     });
 
     Morris.Bar({
@@ -308,6 +309,7 @@
       xkey: 'team',
       ykeys: ['nb'],
       labels: ['Editions Wins'],
+      animate: false
     });
 
     Morris.Bar({
@@ -323,6 +325,7 @@
       ykeys: ['nb', 'avg'],
       labels: ['Editions Wins', 'Average Points'],
       nbYkeys2: 1,
+      animate: false
     });
 
     pie_data = [
@@ -335,7 +338,8 @@
 
     Morris.Donut({
       element: 'chart_pie_1',
-      data: pie_data
+      data: pie_data,
+      animate: false
     }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
         var node = document.createElement('span');
@@ -349,7 +353,8 @@
       data: pie_data,
       dataLabels: true,
       showPercentage: true,
-      dataLabelsPosition: 'outside'
+      dataLabelsPosition: 'outside',
+      animate: false
     }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
         var node = document.createElement('span');
@@ -362,7 +367,8 @@
       element: 'chart_pie_3',
       data: pie_data,
       donutType: 'pie',
-      dataLabels: true
+      dataLabels: true,
+      animate: false
     }).options.colors.forEach(function(color, a){ 
       if (pie_data[a] != undefined) {
         var node = document.createElement('span');
