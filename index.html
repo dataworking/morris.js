@@ -100,7 +100,7 @@
             <h3>
               Step chart 
               <span class='float-right'>
-                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code>...<br>lineType: 'step',<br>...</code></pre>">
+                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code>...<br>lineType: 'step',<br>verticalGrid: true,<br>verticalGridType: '- '<br>,...</code></pre>">
                   <i class='fas fa-info-circle'></i>
                 </a>
               </span>
@@ -278,7 +278,9 @@
       xkey: 'year',
       ykeys: ['nb'],
       labels: ['Editions Wins'],
-      lineType: 'step'
+      lineType: 'step',
+      verticalGrid: true,
+      verticalGridType: '- '
     });
 
     Morris.Bar({
