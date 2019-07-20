@@ -100,7 +100,7 @@
             <h3>
               Step chart 
               <span class='float-right'>
-                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code>...<br>lineType: 'step',<br>dataLabels: false,<br>pointStrokeWidths: [0],<br>verticalGrid: true,<br>verticalGridType: '- ',<br>...</code></pre>">
+                <a tabindex='0' class='btn btn-lg btn-link btn-sm' role='button' data-toggle='popover' data-trigger='click' data-html='true' data-content="<pre><code>...<br>lineType: 'step',<br>lineWidth: 2,<br>pointStrokeWidths: [0],<br>pointSize: 0,<br>verticalGrid: true,<br>verticalGridType: '- ',<br>dataLabels: false,<br>...</code></pre>">
                   <i class='fas fa-info-circle'></i>
                 </a>
               </span>
@@ -278,8 +278,10 @@
       xkey: 'year',
       ykeys: ['nb'],
       labels: ['Editions Wins'],
+      dataLabels: false,
       lineType: 'step',
-      dataLabels: false, 
+      lineWidth: 2,
+      pointSize: 0,
       pointStrokeWidths: [0],
       verticalGrid: true,
       verticalGridType: '- '
