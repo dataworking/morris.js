@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta name='keywords' content='morrisjs,morris,charts,animate,animation,label'>
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico'>
+    <!-- Bootstrap CSS -->
+    <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'> -->
+    <link rel='stylesheet' href='../local_examples/lib/bootstrap.min.css' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://pierresh.github.io/morris.js/css/morris.css' crossorigin='anonymous'>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js' crossorigin='anonymous'></script>
+    <script src='https://pierresh.github.io/morris.js/js/morris.js' crossorigin='anonymous'></script>
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css'>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css' />
+    <title>Morris.js 06</title>
+    <style>
+      h1, h2 {
+        font-weight: 300;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      h3 { font-weight: 300; }
+      .chart_morris {
+        height: 250px;
+        width: 100%;
+        background-color: #fff;
+      }
+      canvas { max-height: 250px; }
+      pre, p.no_margin { margin-bottom: 0; }
+    </style>
+  </head>
+  <body>
+    <div class='container-fluid'>
+      <nav class='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
+        <a class='navbar-brand' href='./'>Morris.js 06</a>
+        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul class='navbar-nav mr-auto'>
+            <li class='nav-item'>
+              <a class='nav-link' href='get_started.html'>Get started</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='lines.html'>Line &amp; Area Charts</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='bars.html'>Bar Charts</a>
+            </li>
+            <li class='nav-item'>
+              <a class='nav-link' href='donuts.html'>Donut Charts</a>
+            </li>
+            <li class='nav-item' style='background-color: #6c757d'>
+              <a class='nav-link active' href='test.html'>See it in action!</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+	<a class='github-fork-ribbon' href='https://github.com/pierresh/morris.js' data-ribbon='Fork me on GitHub' style='position: fixed; top: 0; right: 0; z-index:2000;'>Fork me on GitHub</a>
+		<div class='container'>
+			<div class='row'>
+				<div class='col'>
+					<p style='margin-top: 86px;'>This page allow you to quickly test Morris.js06 with some of the available options. Let's consider the following dataset:</p>
+					<pre>
+						<code class='json' style='padding: 0.7em;'>[
+	{ year: '1958', nb: 9, e: 1 },
+	{ year: '1962', nb: 4, e: 2 },
+	{ year: '1970', nb: 2, e: 4 },
+	{ year: '1994', nb: 1, e: 9 },
+	{ year: '2002', nb: 1, e: 9 }
+]</code>
+					</pre>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col'>
+					<h4>Options for both charts</h4>
+				</div>
+			</div>
+			<div class='row' id='options_common'>
+				<div class='col'>
+					<div class='form-group'>
+						<label>animate</label>
+						<select type='text' id='animate' class="form-control form-control-sm">
+							<option value='true'>True</option>
+							<option value='false'>False</option>
+						</select>
+					</div>
+				</div>
+				<div class='col'>
+					<div class='form-group'>
+						<label>dataLabels</label>
+						<select dataLabels='text' id='dataLabels' class="form-control form-control-sm">
+							<option value='true'>True</option>
+							<option value='false'>False</option>
+						</select>
+					</div>
+				</div>
+				<div class='col'>
+					<div class='form-group'>
+						<label>nbYkeys2</label>
+						<input type='number' id='nbYkeys2' class="form-control form-control-sm text-center" value="0" min='0'>
+					</div>
+				</div>
+				<div class='col'>
+					<div class='form-group'>
+						<label>preUnits</label>
+						<input type='text' id='preUnits' class="form-control form-control-sm text-center" value="">
+					</div>
+				</div>
+				<div class='col'>
+					<div class='form-group'>
+						<label>postUnits</label>
+						<input type='text' id='postUnits' class="form-control form-control-sm text-center" value="">
+					</div>
+				</div>
+				<div class='col'>
+					<div class='form-group'>
+						<label>goals</label>
+						<input type='number' id='goals' class="form-control form-control-sm text-center" value="">
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col' id='options_line'>
+					<h4>Options for line chart</h4>
+					<div class='row'>
+						<div class='col'>
+							<div class='form-group'>
+								<label>parseTime</label>
+								<select type='text' id='parseTime' class="form-control form-control-sm">
+									<option value='true'>True</option>
+									<option value='false'>False</option>
+								</select>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>trendLine</label>
+								<select type='text' id='trendLine' class="form-control form-control-sm">
+									<option value='false'>False</option>
+									<option value='true'>True</option>
+								</select>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>verticalGridType</label>
+								<select type='text' id='verticalGridType' class="form-control form-control-sm">
+									<option value='false'>False</option>
+									<option value='- '>Dashed</option>
+									<option value='. '>Dotted</option>
+									<option value=''>Line</option>
+								</select>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>lineWidth</label>
+								<select type='text' id='lineType' class="form-control form-control-sm">
+									<option value='smooth'>Smooth</option>
+									<option value='jagged'>Jagged</option>
+									<option value='step'>Step</option>
+									<option value='stepNoRiser'>stepNoRiser</option>
+								</select>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>lineWidth</label>
+								<input type='number' id='lineWidth' class="form-control form-control-sm text-center" value="3" min=0>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>pointSize</label>
+								<input type='number' id='pointSize' class="form-control form-control-sm text-center" value="4">
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>pointSizeGrow</label>
+								<input type='number' id='pointSizeGrow' class="form-control form-control-sm text-center" value="3">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='col' id='options_bar'>
+					<h4>Options for bar chart</h4>
+					<div class='row'>
+						<div class='col'>
+							<div class='form-group'>
+								<label>stacked</label>
+								<select type='text' id='stacked' class="form-control form-control-sm">
+									<option value='false'>False</option>
+									<option value='true'>True</option>
+								</select>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>horizontal</label>
+								<select type='text' id='horizontal' class="form-control form-control-sm">
+									<option value='false'>False</option>
+									<option value='true'>True</option>
+								</select>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>barSizeRatio</label>
+								<input type='number' id='barSizeRatio' class="form-control form-control-sm text-center" value="0.75" step='0.05' min='0' max='1'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col'>
+					<div id='line_chart'></div>
+				</div>
+				<div class='col'>
+					<div id='bar_chart'></div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <script>
+    	let dataset = [
+				{ year: '1958', nb: 90, e: 1 },
+				{ year: '1962', nb: 40, e: 2 },
+				{ year: '1970', nb: 20, e: 4 },
+				{ year: '1994', nb: 10, e: 9 },
+				{ year: '2002', nb: 10, e: 9 },
+			];
+
+		let linechart = new Morris.Line({
+			element: 'line_chart',
+			data: dataset,
+			xkey: 'year',
+			ykeys: ['nb', 'e'],
+			labels: ['Value', 'Allo'],
+			verticalGrid: false,
+			verticalGridType: '- ',
+			nbYkeys2: $('#nbYkeys2').val(),
+			lineType: $('#lineType').val(),
+			preUnits: $('#preUnits').val(),
+			postUnits: $('#postUnits').val(),
+		});
+		let barchart = new Morris.Bar({
+			element: 'bar_chart',
+			data: dataset,
+			xkey: 'year',
+			ykeys: ['nb', 'e'],
+			labels: ['Value', 'Allo'],
+			horizontal: false,
+			nbYkeys2: $('#nbYkeys2').val(),
+			barSizeRatio: $('#barSizeRatio').val(),
+			preUnits: $('#preUnits').val(),
+			postUnits: $('#postUnits').val(),
+		});
+
+		$('#options_common select, #options_common input').change(function(){
+			refresh_line();
+			refresh_bar();
+		});
+
+		$('#options_line select, #options_line input').change(function(){
+			refresh_line();
+		});
+
+		$('#options_bar select, #options_bar input').change(function(){
+			refresh_bar();
+		})
+
+		function refresh_line() {
+			linechart.options.nbYkeys2 = $('#nbYkeys2').val();
+			linechart.options.preUnits = $('#preUnits').val();
+			linechart.options.postUnits = $('#postUnits').val();
+			linechart.options.dataLabels = ($('#dataLabels').val() === 'true');
+			linechart.options.animate = ($('#animate').val() === 'true');
+			if ($('#goals').val() == '') { linechart.options.goals = []; }
+			else { linechart.options.goals = [$('#goals').val()]; }
+
+			linechart.options.parseTime = ($('#parseTime').val() === 'true');
+			linechart.options.trendLine = ($('#trendLine').val() === 'true');
+			linechart.options.verticalGrid = ($('#verticalGridType').val() !== 'false');
+			linechart.options.verticalGridType = $('#verticalGridType').val();
+			linechart.options.lineType = $('#lineType').val();
+			linechart.options.lineWidth = $('#lineWidth').val();
+			linechart.options.pointSize = parseInt($('#pointSize').val());
+			linechart.options.pointSizeGrow = parseInt($('#pointSizeGrow').val());
+			console.log($('#pointSizeGrow').val()+' '+linechart.options.pointSizeGrow);
+			linechart.setData(dataset);
+		}
+
+		function refresh_bar() {
+			barchart.options.nbYkeys2 = $('#nbYkeys2').val();
+			barchart.options.preUnits = $('#preUnits').val();
+			barchart.options.postUnits = $('#postUnits').val();
+			barchart.options.dataLabels = ($('#dataLabels').val() === 'true');
+			barchart.options.animate = ($('#animate').val() === 'true');
+			if ($('#goals').val() == '') { barchart.options.goals = []; }
+			else { barchart.options.goals = [$('#goals').val()]; }
+
+			barchart.options.stacked = ($('#stacked').val() === 'true');
+			barchart.options.horizontal = ($('#horizontal').val() === 'true');
+			console.log($('#barSizeRatio').val())
+			barchart.options.barSizeRatio = $('#barSizeRatio').val();
+			barchart.setData(dataset);
+		}
+    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
