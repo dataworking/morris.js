@@ -107,24 +107,28 @@
 					<div class='form-group'>
 						<label>nbYkeys2</label>
 						<input type='number' id='nbYkeys2' class="form-control form-control-sm text-center" value="0" min='0'>
+						<small class='form-text text-muted'>Nb of series on right Y axis</small>
 					</div>
 				</div>
 				<div class='col'>
 					<div class='form-group'>
 						<label>preUnits</label>
-						<input type='text' id='preUnits' class="form-control form-control-sm text-center" value="">
+						<input type='text' id='preUnits' class="form-control form-control-sm text-center" value=""
+								placeholder="ie. $">
 					</div>
 				</div>
 				<div class='col'>
 					<div class='form-group'>
 						<label>postUnits</label>
-						<input type='text' id='postUnits' class="form-control form-control-sm text-center" value="">
+						<input type='text' id='postUnits' class="form-control form-control-sm text-center" value=""
+								placeholder="ie. A">
 					</div>
 				</div>
 				<div class='col'>
 					<div class='form-group'>
 						<label>goals</label>
-						<input type='number' id='goals' class="form-control form-control-sm text-center" value="">
+						<input type='text' id='goals' class="form-control form-control-sm text-center" value=""
+								placeholder="ie. 30 or 30,40">
 					</div>
 				</div>
 			</div>
@@ -159,6 +163,12 @@
 									<option value='. '>Dotted</option>
 									<option value=''>Line</option>
 								</select>
+							</div>
+						</div>
+						<div class='col'>
+							<div class='form-group'>
+								<label>events</label>
+								<input type='text' id='events' class="form-control form-control-sm text-center" value="1990">
 							</div>
 						</div>
 						<div class='col'>
@@ -254,6 +264,7 @@
 			lineType: $('#lineType').val(),
 			preUnits: $('#preUnits').val(),
 			postUnits: $('#postUnits').val(),
+			events: [$('#events').val()],
 		});
 		let barchart = new Morris.Bar({
 			element: 'bar_chart',
@@ -288,7 +299,10 @@
 			linechart.options.dataLabels = ($('#dataLabels').val() === 'true');
 			linechart.options.animate = ($('#animate').val() === 'true');
 			if ($('#goals').val() == '') { linechart.options.goals = []; }
-			else { linechart.options.goals = [$('#goals').val()]; }
+			else { linechart.options.goals = $('#goals').val().split(','); }
+
+			if ($('#events').val() == '' || $('#parseTime').val() !== 'true') { linechart.options.events = []; }
+			else { linechart.options.events = $('#events').val().split(','); }
 
 			linechart.options.parseTime = ($('#parseTime').val() === 'true');
 			linechart.options.trendLine = ($('#trendLine').val() === 'true');
@@ -298,8 +312,9 @@
 			linechart.options.lineWidth = $('#lineWidth').val();
 			linechart.options.pointSize = parseInt($('#pointSize').val());
 			linechart.options.pointSizeGrow = parseInt($('#pointSizeGrow').val());
-			console.log($('#pointSizeGrow').val()+' '+linechart.options.pointSizeGrow);
 			linechart.setData(dataset);
+
+			console.log(linechart.options);
 		}
 
 		function refresh_bar() {
@@ -309,11 +324,10 @@
 			barchart.options.dataLabels = ($('#dataLabels').val() === 'true');
 			barchart.options.animate = ($('#animate').val() === 'true');
 			if ($('#goals').val() == '') { barchart.options.goals = []; }
-			else { barchart.options.goals = [$('#goals').val()]; }
+			else { barchart.options.goals = $('#goals').val().split(','); }
 
 			barchart.options.stacked = ($('#stacked').val() === 'true');
 			barchart.options.horizontal = ($('#horizontal').val() === 'true');
-			console.log($('#barSizeRatio').val())
 			barchart.options.barSizeRatio = $('#barSizeRatio').val();
 			barchart.setData(dataset);
 		}
