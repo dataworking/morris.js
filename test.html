@@ -70,11 +70,11 @@
 					<p style='margin-top: 86px;'>This page allow you to quickly test Morris.js06 with some of the available options. Let's consider the following dataset:</p>
 					<pre>
 						<code class='json' style='padding: 0.7em;'>[
-	{ year: '1958', nb: 9, e: 1 },
-	{ year: '1962', nb: 4, e: 2 },
-	{ year: '1970', nb: 2, e: 4 },
-	{ year: '1994', nb: 1, e: 9 },
-	{ year: '2002', nb: 1, e: 9 }
+	{ year: '1958', nb: 90, e: 1 },
+	{ year: '1962', nb: 40, e: 2 },
+	{ year: '1970', nb: 20, e: 4 },
+	{ year: '1994', nb: 10, e: 9 },
+	{ year: '2002', nb: 10, e: 10 },
 ]</code>
 					</pre>
 				</div>
@@ -131,6 +131,15 @@
 								placeholder="ie. 30 or 30,40">
 					</div>
 				</div>
+				<div class='col'>
+					<div class='form-group'>
+						<label>gridIntegers</label>
+						<select dataLabels='text' id='gridIntegers' class="form-control form-control-sm">
+							<option value='true'>True</option>
+							<option value='false'>False</option>
+						</select>
+					</div>
+				</div>
 			</div>
 			<div class='row'>
 				<div class='col' id='options_line'>
@@ -173,12 +182,13 @@
 						</div>
 						<div class='col'>
 							<div class='form-group'>
-								<label>lineWidth</label>
+								<label>lineType</label>
 								<select type='text' id='lineType' class="form-control form-control-sm">
 									<option value='smooth'>Smooth</option>
 									<option value='jagged'>Jagged</option>
 									<option value='step'>Step</option>
 									<option value='stepNoRiser'>stepNoRiser</option>
+									<option value='vertical'>vertical</option>
 								</select>
 							</div>
 						</div>
@@ -249,7 +259,7 @@
 				{ year: '1962', nb: 40, e: 2 },
 				{ year: '1970', nb: 20, e: 4 },
 				{ year: '1994', nb: 10, e: 9 },
-				{ year: '2002', nb: 10, e: 9 },
+				{ year: '2002', nb: 10, e: 10 },
 			];
 
 		let linechart = new Morris.Line({
@@ -258,6 +268,7 @@
 			xkey: 'year',
 			ykeys: ['nb', 'e'],
 			labels: ['Value', 'Allo'],
+			gridIntegers: true,
 			verticalGrid: false,
 			verticalGridType: '- ',
 			nbYkeys2: $('#nbYkeys2').val(),
@@ -273,6 +284,7 @@
 			ykeys: ['nb', 'e'],
 			labels: ['Value', 'Allo'],
 			horizontal: false,
+			gridIntegers: true,
 			nbYkeys2: $('#nbYkeys2').val(),
 			barSizeRatio: $('#barSizeRatio').val(),
 			preUnits: $('#preUnits').val(),
@@ -298,6 +310,7 @@
 			linechart.options.postUnits = $('#postUnits').val();
 			linechart.options.dataLabels = ($('#dataLabels').val() === 'true');
 			linechart.options.animate = ($('#animate').val() === 'true');
+			linechart.options.gridInteger = ($('#gridInteger').val() === 'true');
 			if ($('#goals').val() == '') { linechart.options.goals = []; }
 			else { linechart.options.goals = $('#goals').val().split(','); }
 
@@ -323,6 +336,7 @@
 			barchart.options.postUnits = $('#postUnits').val();
 			barchart.options.dataLabels = ($('#dataLabels').val() === 'true');
 			barchart.options.animate = ($('#animate').val() === 'true');
+			barchart.options.gridIntegers = ($('#gridIntegers').val() === 'true');
 			if ($('#goals').val() == '') { barchart.options.goals = []; }
 			else { barchart.options.goals = $('#goals').val().split(','); }
 
