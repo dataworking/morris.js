@@ -133,10 +133,14 @@ class Morris.Donut extends Morris.EventEmitter
           else
             label_x = parseFloat(cx) + parseFloat((dist) * 0.39 * p_sin_p0);
             label_y = parseFloat(cy) + parseFloat((dist) * 0.39 * p_cos_p0);
+            
         else
-          label_x = parseFloat(cx) + parseFloat((dist - 9) * 0.5 * p_sin_p0);
-          label_y = parseFloat(cy) + parseFloat((dist - 9) * 0.5 * p_cos_p0);
-        
+          label_x = parseFloat(cx) + parseFloat((dist) * 0.5 * p_sin_p0);
+          label_y = parseFloat(cy) + parseFloat((dist) * 0.5 * p_cos_p0);
+        if label_x < parseFloat(cx)
+          label_x -= (parseFloat(cx) - label_x) * 0.01
+        else
+          label_x += (label_x - parseFloat(cx)) * 0.001
         if @options.dataLabelsColor != 'auto'
           color = @options.dataLabelsColor
         else if @options.dataLabelsPosition == 'inside' && @isColorDark(@options.colors[i]) == true
